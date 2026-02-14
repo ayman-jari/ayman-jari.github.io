@@ -152,7 +152,7 @@ img {
     width: 100%;
     position: fixed;
     z-index: var(--z-fixed);
-    background-color: transparent;
+    background-color: var(--first-color-second);
     top: 0;
     left: 0;
 }
@@ -336,7 +336,7 @@ img {
 
 /* Change background header */
 .scroll-header {
-    background-color: var(--body-color);
+    background-color: var(--first-color-second);
     box-shadow: 0 1px 8px rgba(0, 0, 0, .1);
 }
 
@@ -1264,3 +1264,4 @@ textarea.contact__entree {
     color: var(--first-color);
     text-decoration: underline;
 }
+
