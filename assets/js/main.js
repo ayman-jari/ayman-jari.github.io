@@ -34,7 +34,7 @@ tabs.forEach(tab => {
     })
 })
 
-/*==================== PROJET MODALS (géré dans le bloc filtres) ====================*/
+/*==================== PROJET MODALS ====================*/
 
 /*==================== SCROLL ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
@@ -71,12 +71,18 @@ function scrollUp() {
 window.addEventListener('scroll', scrollUp)
 
 /*==================== CONTACT FORM ====================*/
+emailjs.init('X2_5zxAQMVGPmPODW')
+
 const contactForm = document.getElementById('contact-form')
 if (contactForm) {
     contactForm.addEventListener('submit', e => {
         e.preventDefault()
-        alert('Merci pour votre message ! Je vous répondrai dès que possible.')
-        contactForm.reset()
+        emailjs.sendForm('service_7ekam99', 'template_o67ppxs', contactForm)
+            .then(() => {
+                alert('Message envoyé ! Je vous répondrai dès que possible.')
+                contactForm.reset()
+            })
+            .catch(() => alert('Erreur lors de l\'envoi, réessayez.'))
     })
 }
 
@@ -98,7 +104,7 @@ if (themeCheckbox) {
 }
 
 /*==================== FILTRES & RECHERCHE PROJETS ====================*/
-(function () {
+;(function () {
     const searchInput  = document.getElementById('projets-search')
     const cartes       = document.querySelectorAll('.projet__carte[data-search]')
     const videMsg      = document.getElementById('projets-vide')
@@ -111,16 +117,13 @@ if (themeCheckbox) {
 
     function filterProjects() {
         let visible = 0
-
         cartes.forEach(carte => {
             const types  = carte.dataset.type  || ''
             const langs  = carte.dataset.lang  || ''
             const search = carte.dataset.search || ''
-
             const matchType   = activeType === 'tous' || types.includes(activeType)
             const matchLang   = activeLang === 'tous' || langs.toLowerCase().includes(activeLang.toLowerCase())
             const matchSearch = searchTerm === '' || search.toLowerCase().includes(searchTerm)
-
             if (matchType && matchLang && matchSearch) {
                 carte.classList.remove('hidden')
                 visible++
@@ -128,11 +131,9 @@ if (themeCheckbox) {
                 carte.classList.add('hidden')
             }
         })
-
         if (videMsg) videMsg.style.display = visible === 0 ? 'block' : 'none'
     }
 
-    // Filtres type
     filtresType.forEach(btn => {
         btn.addEventListener('click', () => {
             filtresType.forEach(b => b.classList.remove('actif'))
@@ -142,7 +143,6 @@ if (themeCheckbox) {
         })
     })
 
-    // Filtres langue
     filtresLang.forEach(btn => {
         btn.addEventListener('click', () => {
             filtresLang.forEach(b => b.classList.remove('actif'))
@@ -152,7 +152,6 @@ if (themeCheckbox) {
         })
     })
 
-    // Recherche
     if (searchInput) {
         searchInput.addEventListener('input', () => {
             searchTerm = searchInput.value.trim().toLowerCase()
@@ -160,8 +159,6 @@ if (themeCheckbox) {
         })
     }
 
-    // Modals : les modals sont HORS des cartes (dans le body)
-    // Carte → ouvrir la modal correspondante via data-opens-modal
     function closeAllModals() {
         document.querySelectorAll('.projet__modal.modal-actif').forEach(m => m.classList.remove('modal-actif'))
     }
@@ -171,8 +168,6 @@ if (themeCheckbox) {
         if (!modalId) return
         const modal = document.getElementById(modalId)
         if (!modal) return
-
-        // Clic carte → ouvrir (ignorer si clic sur lien)
         carte.addEventListener('click', e => {
             if (e.target.closest('a')) return
             closeAllModals()
@@ -180,14 +175,22 @@ if (themeCheckbox) {
         })
     })
 
-    // Fermer via fond ou bouton close — pour toutes les modals
     document.querySelectorAll('.projet__modal').forEach(modal => {
-        // Fond
         modal.addEventListener('click', e => {
             if (e.target === modal) modal.classList.remove('modal-actif')
         })
-        // Bouton close
         const closeBtn = modal.querySelector('.projet__modal-close')
         if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('modal-actif'))
     })
 })()
+
+/*==================== MENTIONS LÉGALES ====================*/
+const mentionsModal = document.getElementById('mentions-modal')
+const mentionsBtn   = document.getElementById('mentions-btn')
+const mentionsClose = document.getElementById('mentions-close')
+
+if (mentionsBtn)   mentionsBtn.addEventListener('click', () => mentionsModal.classList.add('modal-actif'))
+if (mentionsClose) mentionsClose.addEventListener('click', () => mentionsModal.classList.remove('modal-actif'))
+if (mentionsModal) mentionsModal.addEventListener('click', e => {
+    if (e.target === mentionsModal) mentionsModal.classList.remove('modal-actif')
+})
