@@ -1,941 +1,988 @@
 <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"> <!-- Lien pour utiliser les icones -->
-        <link rel="stylesheet" href="assets/css/styles.css">
 
-        <link rel="icon" type="image/png" href="assets/img/logo.png">
+<html lang="fr">
 
-        <title>Ayman JARI</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            <nav class="nav conteneur">
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list grille">
-                        <li class="nav__item">
-                            <a href="#propos" class="nav__link">
-                                <i class="uil uil-user-circle nav__icon"></i> À propos
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#parcours" class="nav__link">
-                                <i class="uil uil-briefcase nav__icon"></i> Parcours
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#projets" class="nav__link">
-                                <i class="uil uil-file-edit-alt nav__icon"></i> Projets
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#competences" class="nav__link">
-                                <i class="uil uil-graph-bar nav__icon"></i> Compétences
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contact" class="nav__link">
-                                <i class="uil uil-envelope nav__icon"></i> Contact
-                            </a>
-                        </li>
-                    </ul>
-                    <i class="uil uil-times nav__close" id="nav-close"></i>
-                </div>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link href="assets/img/logo.png" rel="icon" type="image/png" />
+    <title>Ayman JARI</title>
+</head>
 
-                <div class="nav__btn">
-                    <a href="#" class="nav__accueil">
-                        <i class="uil uil-estate nav__btn-icone"></i> <!-- Accueil -->
-                    </a>
-
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="uil uil-apps nav__btn-icone"></i> <!-- Parties -->
-                    </div>
-
-                    <div class="nav__param" id="nav-param">
-                        <i class="uil uil-setting nav__btn-icone"></i> <!-- Paramètres -->
-
-                    <div>
-                        <i class="uil uil-brightness change-theme" id="theme-bouton"></i>
-                    </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== ACCUEIL ====================-->
-            <section class="accueil section" id="accueil">
-                <div class="accueil__conteneur conteneur grille">
-                    <div class="accueil__contenu grille">
-                        <div class="accueil__img">
-                            <svg class="accueil__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <mask id="mask0" mask-type="alpha">
-                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav conteneur">
+            <!-- Logo / Nom -->
+            <a class="nav__logo" href="#accueil">Ayman JARI</a>
+            <!-- Liens desktop -->
+            <ul class="nav__list" id="nav-menu">
+                <li><a class="nav__link" href="#propos">À propos</a></li>
+                <li><a class="nav__link" href="#parcours">Parcours</a></li>
+                <li><a class="nav__link" href="#projets">Projets</a></li>
+                <li><a class="nav__link" href="#competences">Compétences</a></li>
+                <li><a class="nav__link" href="#contact">Contact</a></li>
+            </ul>
+            <!-- Droite : toggle dark/light + hamburger -->
+            <div class="nav__actions">
+                <!-- Switch pill dark/light -->
+                <label class="theme-switch" title="Mode sombre / clair">
+                    <input id="theme-bouton" type="checkbox" />
+                    <span class="theme-switch__track">
+                        <span class="theme-switch__thumb">
+                            <i class="uil uil-moon theme-switch__icon theme-switch__icon--moon"></i>
+                            <i class="uil uil-sun theme-switch__icon theme-switch__icon--sun"></i>
+                        </span>
+                    </span>
+                </label>
+                <!-- Hamburger mobile -->
+                <button aria-label="Ouvrir le menu" class="nav__hamburger" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <!-- Overlay mobile -->
+            <div class="nav__overlay" id="nav-overlay"></div>
+        </nav>
+    </header>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== ACCUEIL ====================-->
+        <section class="accueil section" id="accueil">
+            <div class="accueil__conteneur conteneur grille">
+                <div class="accueil__contenu grille">
+                    <div class="accueil__img">
+                        <svg class="accueil__blob" viewbox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
                                     130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
                                     97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                </mask>
-                                <g mask="url(#mask0)">
-                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"></path>
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
                                     165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
                                     129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                    <image class="accueil__blob-img" x='20' y='-40' xlink:href="assets/img/perfil.png"/>
-                                </g>
-                            </svg>
-                        </div>
-
-                        <div class="accueil__donnees">
-                            <h1 class="accueil__titre">Ayman JARI</h1>
-                            <h3 class="accueil__soustitre">Étudiant Ingénieur Informatique</h3>
-                            <p class="accueil__description">À la recherche d'une alternance de 24 mois à partir de septembre 2025</p>
-                        </div>
+                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z">
+                                </path>
+                                <image class="accueil__blob-img" x="20" xlink:href="assets/img/perfil.png" y="-40" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="accueil__donnees">
+                        <h1 class="accueil__titre">Ayman JARI</h1>
+                        <h3 class="accueil__soustitre">Étudiant Ingénieur Informatique</h3>
+                        <p class="accueil__description">À la recherche d'une alternance de 24 mois à partir de septembre
+                            2025</p>
                     </div>
                 </div>
-            </section>
-
-            <!--==================== À PROPOS ====================-->
-            <section class="propos section" id="propos">
-                <h2 class="section__titre">À propos</h2>
-                <span class="section__soustitre">Découvrez qui je suis</span>
-
-                <div class="propos__conteneur conteneur grille">
-                    <div class="propos__donnees">
-                        <p class="propos__description">📚 Passionné par l’informatique, je suis actuellement étudiant ingénieur en informatique à Sup Galilée. Curieux et rigoureux,
-                            j’aime relever des défis techniques, apprendre de nouvelles technologies et travailler en équipe pour concevoir des solutions innovantes.<br><br>
-
-                            🔍 Je recherche actuellement une alternance de 24 mois à partir de septembre 2025 dans les domaines du développement web, logiciel ainsi que la Data
-                            afin de mettre en pratique mes compétences et continuer à progresser.<br><br>
-                            
-                            🚀 En dehors du code, je suis passionné par le basketball, les jeux vidéo et les mangas, qui nourrissent ma créativité et mon esprit stratégique.
-                            Toujours motivé pour apprendre et partager, je suis prêt à relever de nouveaux défis professionnels !</p>
-
-                        <div class="propos__info">
-                            <div>
-                                <span class="propos__info-titre">22</span>
-                                <span class="propos__info-nom">Ans</span>
-                            </div>
-
-                            <div>
-                                <span class="propos__info-titre">15</span>
-                                <span class="propos__info-nom">Projets <br> complétés</span>
-                            </div>
-
-                            <div>
-                                <span class="propos__info-titre">14</span>
-                                <span class="propos__info-nom">Langages <br> manipulés</span>
-                            </div>
-                        </div>
-
-                        <div class="propos__boutons">
-                            <a download="" href="assets/pdf/Alexa-Cv.pdf" class="bouton bouton--flex">
-                                Télécharger mon CV
-                                <i class="uil uil-download-alt bouton__icone"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!--==================== PARCOURS ====================-->
-            <section class="parcours section" id="parcours">
-                <h2 class="section__titre">Parcours</h2>
-                <span class="section__soustitre">Mon évolution académique et professionnelle</span>
-                <div class="parcours__conteneur conteneur">
-                    <div class="parcours__tabs">
-                        <div class="parcours__bouton bouton--flex parcours__actif" data-target='#formation'>
-                            <i class="uil uil-graduation-cap parcours__icone"></i>
-                            Formation
-                        </div>
-
-                        <div class="parcours__bouton bouton--flex" data-target='#experience'>
-                            <i class="uil uil-briefcase parcours__icone"></i>
-                            Expérience
-                        </div>
-                    </div>
-
-                    <div class="parcours__sections">
-                        <!--==================== PARCOURS FORMATION ====================-->
-                        <div class="parcours__contenu parcours__actif" data-content id="formation">
-                            <!--==================== FORMATION 4 ====================-->
-                            <div class="parcours__donnees">
-                                <div>
-                                    <h3 class="parcours__titre">Formation Ingénieur Informatique</h3>
-                                    <span class="parcours__soustitre">Sup Galilée</span>
-                                    <div class="parcours__calendrier">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2023-2025
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <span class="parcours__ronds"></span>
-                                    <span class="parcours__ligne"></span>
-                                </div>
-                            </div>
-
-                            <!--==================== FORMATION 3 ====================-->
-                            <div class="parcours__donnees">
-                                <div></div>
-
-                                <div>
-                                    <span class="parcours__ronds"></span>
-                                    <span class="parcours__ligne"></span>
-                                </div>
-
-                                <div>
-                                    <h3 class="parcours__titre">Licence Informatique</h3>
-                                    <span class="parcours__soustitre">Université Sorbonne Paris Nord</span>
-                                    <div class="parcours__calendrier">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2021-2023
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--==================== FORMATION 2 ====================-->
-                            <div class="parcours__donnees">
-                                <div>
-                                    <h3 class="parcours__titre">Cursus Préparatoire Ingénieur Intégré</h3>
-                                    <span class="parcours__soustitre">Sup Galilée</span>
-                                    <div class="parcours__calendrier">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2020-2021
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <span class="parcours__ronds"></span>
-                                    <span class="parcours__ligne"></span>
-                                </div>
-                            </div>
-
-                            <!--==================== FORMATION 1 ====================-->
-                            <div class="parcours__donnees">
-                                <div></div>
-
-                                <div>
-                                    <span class="parcours__ronds"></span>
-                                    <!-- <span class="parcours__ligne"></span> -->
-                                </div>
-
-                                <div>
-                                    <h3 class="parcours__titre">Terminale Scientifique</h3>
-                                    <span class="parcours__soustitre">Lycée Maurice Utrillo</span>
-                                    <div class="parcours__calendrier">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2019-2020
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--==================== PARCOURS EXPERIENCE ====================-->
-                        <div class="parcours__contenu" data-content id="experience">
-                            <!--==================== EXPERIENCE 4 ====================-->
-                            <div class="parcours__donnees">
-                                <div>
-                                    <h3 class="parcours__titre">Professeur particulier en Mathématiques</h3>
-                                    <span class="parcours__soustitre">Complétude</span>
-                                    <div class="parcours__calendrier">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        Jan. 2025 - Aujourd'hui
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <span class="parcours__ronds"></span>
-                                    <span class="parcours__ligne"></span>
-                                </div>
-                            </div>
-
-                            <!--==================== EXPERIENCE 3 ====================-->
-                            <div class="parcours__donnees">
-                                <div></div>
-
-                                <div>
-                                    <span class="parcours__ronds"></span>
-                                    <span class="parcours__ligne"></span>
-                                </div>
-
-                                <div>
-                                    <h3 class="parcours__titre">Chauffeur Livreur Polyvalent</h3>
-                                    <span class="parcours__soustitre">Star Service</span>
-                                    <div class="parcours__calendrier">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        Sep. 2024 - Nov. 2024
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--==================== EXPERIENCE 2 ====================-->
-                            <div class="parcours__donnees">
-                                <div>
-                                    <h3 class="parcours__titre">Tuteur en Informatique</h3>
-                                    <span class="parcours__soustitre">Université Sorbonne Paris Nord</span>
-                                    <div class="parcours__calendrier">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        Fev. 2024 - Mai 2024
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <span class="parcours__ronds"></span>
-                                    <span class="parcours__ligne"></span>
-                                </div>
-                            </div>
-
-                            <!--==================== EXPERIENCE 1 ====================-->
-                            <div class="parcours__donnees">
-                                <div></div>
-
-                                <div>
-                                    <span class="parcours__ronds"></span>
-                                    <!-- <span class="parcours__ligne"></span> -->
-                                </div>
-
-                                <div>
-                                    <h3 class="parcours__titre">Développeur Front-End & Data Analyst</h3>
-                                    <span class="parcours__soustitre">Ministère de la Culture</span>
-                                    <div class="parcours__calendrier">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        Juin 2023 - Juillet 2023
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!--==================== PROJETS ====================-->
-            <section class="projets section" id="projets">
-                <h2 class="section__titre">Projets</h2>
-                <span class="section__soustitre">Mes réalisations et travaux</span>
-
-                <div class="projets__conteneur conteneur">
-                    <ul class="projets__liste grille">
-                        <!-- Projet 1 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/mary_aukart.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Mary Aukart</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Mary Aukart</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Programmation d'un jeu de course en vue du dessus jouable tout seul ou à deux joueurs.
-                                    </p>
-        
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> C</p>
-                                    </div>
-        
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                    Dans le mode "Solo", le joueur devra réaliser 3 tours de circuit le plus rapidement possible en évitant des obstacles sur la route.
-                                    Dans le mode "Duo", le premier joueur à réaliser 3 tours aura gagné.
-                                    Il y a le choix entre 4 personnages et 4 circuits.
-                                    De plus, il y a différentes musiques afin d'offrir une expérience de jeu plus agréable.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 2 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/sorting_robot.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Game Sorting Robot</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Game Sorting Robot</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Développement de différentes stratégies algorithmiques afin d'optimiser les déplacements d'un robot pour trier des pièces colorées
-                                        sur une grille de la manière la plus rapide possible.
-                                    </p>
-        
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> C</p>
-                                    </div>
-        
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnement :</span>
-                                        Il faut trouver la case la plus proche du robot avec une pièce, puis celle de la couleur correspondante.
-                                        Le premier algorithme parcourt la grille ligne par ligne et colonne par colonne.
-                                        Le second suit un parcours circulaire en s'éloignant progressivement du robot.
-                                        Le troisième trie les cases par couleur dans des listes chaînées pour éviter de parcourir toute la grille.
-                                        Enfin, le dernier utilise un arbre AVL, optimisant la recherche, l'insertion et la suppression.
-                                        Chaque méthode améliore la rapidité de la solution, notamment pour les grandes grilles.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        
-                        <!-- Projet 3 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/solveur_booleen.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Solveur booléen</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Solveur booléen</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Implémentation d'un solveur booléen permettant de calculer l’ensemble des solutions d’un système d’équations booléennes.
-    
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> OCaml</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnement :</span>
-                                        L’algorithme procède en 3 étapes.
-                                        Détermination des variables dans le système d’équations.
-                                        Génération de toutes les combinaisons de variables possibles.
-                                        Évaluation de chaque équation avec chaque combinaison pour garder les combinaisons solutions du système.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 4 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/dames.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Jeu de dames</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Jeu de dames</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Développement d'un serveur et d'un client jouant aux dames en ligne contre ceux de nos camarades.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> C</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Le serveur, exécuté dans un conteneur, reste actif en attente de connexions et peut gérer plusieurs parties simultanément.
-                                        Le serveur et le client jouent automatiquement en envoyant leurs coups à leur adversaire et en vérifiant ceux reçus.
-                                        La communication entre client et serveur s’effectue via des sockets TCP/IP, garantissant un échange fluide des mouvements.
-                                        Les règles classiques du jeu de dames sont respectées, incluant les déplacements, captures et conditions de victoire.
-                                        À la fin de chaque partie, un rapport de match est automatiquement envoyé au serveur du professeur.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 5 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/wordle.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Wordle</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Wordle</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Développement du jeu Wordle avec une architecture serveur-client.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> C</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Le serveur sélectionne un mot de 5 lettres que le joueur doit deviner en envoyant ses propositions via un client.
-                                        À chaque tentative, le programme analyse la proposition et fournit des indices sur la présence et la position des lettres dans le mot cible.
-                                        La communication entre le serveur et le client se fait via des sockets, garantissant ainsi une interaction fluide et en temps réel.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 6 -->
-                         <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/mineweb.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">MineWeb</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">MineWeb</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Création d'une interface web interactive permettant de simuler la vie et les actions d’un monstre inspiré de Minecraft.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> HTML, CSS, JavaScript</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Le monstre dispose d’actions comme courir, combattre, manger, dormir ou travailler, qui affectent sa vie, sa faim et son argent.
-                                        Un journal d’activité affiche en temps réel les événements liés au monstre, et un système de score et d’argent suit sa progression.
-                                        L’interface adopte un design pixelisé fidèle à Minecraft, avec de nombreux sons pour une immersion plus complète.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 7 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/vdd.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Absentéisme et Data</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Absentéisme et Data</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Étude des causes et les tendances de l’absentéisme au sein d’une entreprise de messagerie au Brésil dans une période donnée.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> Python</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Plusieurs visualisations ont été réalisées pour explorer les causes et les tendances de l’absentéisme.
-                                        Nottament des graphiques comparant l’absentéisme en fonction des jours, mois et saisons,
-                                        et mais également les principales raisons d’absence (maladies, blessures, consultations médicales, absences injustifiées, etc.).
-                                        Cela permet ainsi d'identifier les périodes où les employés sont les plus absents et d’en déduire les causes sous-jacentes.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 8 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/city_mapper.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">City Mapper</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">City Mapper</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Développement d'une application de planification de trajet en transport en commun pour la ville de Dublin.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl"><span class="projet__modal-txt-sl">Langages / Outils :</span></span> Python, SQL</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        L'utilisateur peut choisir les points de départ et d'arrivée en saisissant manuellement le nom des arrêts ou bien en cliquant directement sur la carte.
-                                        En cliquant sur un des itinéraires proposés par l’application, il sera affiché sur la carte.
-                                        Il est possible de selectionner le nombre de changements de ligne maximum ou bien les modes de transport souhaités.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 9 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/train.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Simulateur de trains</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Simulateur de trains</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Développement d’un simulateur interactif permettant aux utilisateurs de concevoir, modifier et observer un réseau ferroviaire en mouvement.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> HTML, CSS, JavaScript</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Le site permet aux utilisateurs de construire un réseau ferroviaire en plaçant différents types de rails et d'éléments sur une grille.
-                                        Il est possible d'ajouter des trains avec un nombre variable de wagons et de les voir évoluer automatiquement en suivant les rails.
-                                        L'utilisateur peut interagir avec l'interface en cliquant pour ajouter ou modifier des éléments du décor, tels que des gares, des plans d'eau et des forêts.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 10 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/messagerie.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Messagerie</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Messagerie</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Conception d'un système de messagerie permettant la communication en temps réel entre plusieurs utilisateurs via un terminal.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> C</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Le projet repose sur une architecture client-serveur.
-                                        Le serveur gère les connexions des clients et assure la transmission des messages.
-                                        Chaque client peut se connecter, envoyer et recevoir des messages de manière asynchrone grâce à l’utilisation de threads.
-                                        Un mécanisme de verrouillage est mis en place pour assurer l’intégrité des données partagées
-                                        et un système de journalisation enregistre toutes les interactions pour une traçabilité complète des échanges.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 11 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/automate.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Automate cellulaire</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Automate cellulaire</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Développement d'un simulateur permettant de modéliser et d’observer l’évolution d’un automate cellulaire basé sur des règles définies par l’utilisateur.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> Java</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        L'utilisateur inscrit dans le fichier de configuration XML les règles d'initialisation, de transition ainsi que le voisinage des cellules/
-                                        L’application charge ce fichier et affiche l’évolution de la grille au fil du temps.
-                                        Il existe des configurations prédéfinies comme celle du triangle de Sierpinski ou bien du jeu de la vie.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 12 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/puissance4.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Puissance 4</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Puissance 4</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Développement d’un Puissance 4 avec un mode Joueur vs Joueur et un mode Joueur vs IA basé sur l’algorithme Minimax.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> C</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Dans le mode Joueur vs Joueur, les deux utilisateurs alternent leurs tours et,
-                                        dans le mode Joueur vs IA, une intelligence artificielle tente de jouer le meilleur coup grâce à un système d’évaluation basé sur un arbre de décision.
-                                        L'interface fonctionne via un terminal, affichant la grille et acceptant les entrées des joueurs.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 13 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/add.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Analyse de données</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Analyse de données</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Étude de l’influence de la crise sanitaire liée au Covid-19 sur la taille des logements vendus dans les Yvelines et les Hauts-de-Seine entre 2019 et 2023.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> Excel, Matlab</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnement :</span>
-                                        L'étude a commencé par une analyse préliminaire sous Excel qui a montré une hausse significative de la taille moyenne des logements après le confinement.
-                                        Un test du χ² a confirmé un impact statistiquement significatif
-                                        et une ACP normée sous Matlab a mis en évidence une forte corrélation entre la période post-confinement et l’augmentation du nombre de pièces.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 14 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/matrice.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Inversion de matrice</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Inversion de matrice</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Développement d'un programme permettant de calculer l’inverse d’une matrice donnée en entrée dans un fichier texte
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> C</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnement :</span>
-                                        Le programme divise la matrice en sous-matrices et applique la formule d’inversion de Schur, réduisant ainsi le calcul à l’inversion de blocs plus petits.
-                                        Cette approche améliore la stabilité numérique et diminue la complexité des calculs, ce qui garantit un résultat plus rapide que les méthodes classiques.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Projet 15 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="assets/img/projets/portfolio.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">Site portfolio</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Site portfolio</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Implémentation d'un site web afin d'y présenter mon parcours, mes compétences et mes projets à travers un site interactif et intuitif.
-                                    </p>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> HTML, CSS, JavaScript, PHP</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Ce site portfolio propose une navigation fluide à travers différentes sections permettant de découvrir mon profil, mes expériences et mes réalisations.
-                                        Une galerie de projets illustrés permet d'explorer mes travaux avec des descriptions détaillées.
-                                        Une section contact est également disponible afin de faciliter les échanges professionnels.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-			
-			<!-- Projet 15 -->
-                        <li class="projet__carte">
-                            <span class="projet__bouton">
-                                <img src="airball/img/logo.png" alt="Aperçu du projet" class="projet__image">
-                            </span>
-
-                            <h3 class="projet__titre">AirBall</h3>
-
-                            <div class="projet__modal">
-                                <div class="projet__modal-contenu">
-                                    <h4 class="projet__modal-titre">Site portfolio</h4>
-                                    <i class="uil uil-times projet__modal-close"></i>
-
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Objectif :</span>
-                                        Implémentation d'un site web afin d'y présenter mon parcours, mes compétences et mes projets à travers un site interactif et intuitif.
-                                    </p>
-
-				<a href="airball/menu.html">Jouer � AirBall</a>
-    
-                                    <div class="projet__modal-txt">
-                                        <p><span class="projet__modal-txt-sl">Langages / Outils :</span> HTML, CSS, JavaScript, PHP</p>
-                                    </div>
-    
-                                    <p class="projet__modal-txt">
-                                        <span class="projet__modal-txt-sl">Fonctionnalités :</span>
-                                        Ce site portfolio propose une navigation fluide à travers différentes sections permettant de découvrir mon profil, mes expériences et mes réalisations.
-                                        Une galerie de projets illustrés permet d'explorer mes travaux avec des descriptions détaillées.
-                                        Une section contact est également disponible afin de faciliter les échanges professionnels.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-            </section>
-
-            <!--==================== COMPETENCES ====================-->
-            <section class="competences section" id="competences">
-                <h2 class="section__titre">Compétences</h2>
-                <span class="section__soustitre">Mon savoir-faire technique et mes atouts</span>
-
-                c python java js css html sql mips lc3 c++ php matlab julia ocaml
-            </section>
-
-            <!--==================== CONTACT ====================-->
-            <section class="contact section" id="contact">
-                <h2 class="section__titre">Contact</h2>
-                <span class="section__soustitre">Échangeons ensemble !</span>
-
-                <div class="contact__conteneur conteneur grille">
-                    <div>
-                        <div class="contact__information">
-                            <i class="uil uil-envelope-alt contact__icone"></i>
-
-                            <div>
-                                <h3 class="contact__titre">Email :</h3>
-                                <span class="contact__soustitre">jariayman.pro@gmail.com</span>
-                            </div>
-                        </div>
-
-                        <div class="contact__information">
-                            <i class="uil uil-linkedin contact__icone"></i>
-
-                            <div>
-                                <h3 class="contact__titre">LinkedIn :</h3>
-                                <a href="https://www.linkedin.com/in/ayman-jari/" target="_blank" class="contact__soustitre">
-                                    linkedin.com/in/ayman-jari/
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form action="" class="contact__form">
-                        <div class="contact__entrees grille">
-                            <div class="contact__contenu">
-                                <label for="" class="contact__label">Prénom</label>
-                                <input type="text" class="contact__entree">
-                            </div>
-
-                            <div class="contact__contenu">
-                                <label for="" class="contact__label">Nom</label>
-                                <input type="text" class="contact__entree">
-                            </div>
-
-                            <div class="contact__contenu">
-                                <label for="" class="contact__label">Email</label>
-                                <input type="email" class="contact__entree">
-                            </div>
-
-                            <div class="contact__contenu">
-                                <label for="" class="contact__label">Objet</label>
-                                <input type="text" class="contact__entree">
-                            </div>
-
-                            <div class="contact__contenu contact__msg">
-                                <label for="" class="contact__label">Message</label>
-                                <textarea name="" id="" cols="0" rows="7" class="contact__entree"></textarea>
-                            </div>
-                        </div>
-
+            </div>
+        </section>
+        <!--==================== À PROPOS ====================-->
+        <section class="propos section" id="propos">
+            <h2 class="section__titre">À propos</h2>
+            <span class="section__soustitre">Découvrez qui je suis</span>
+            <div class="propos__conteneur conteneur grille">
+                <div class="propos__donnees">
+                    <p class="propos__description">📚 Passionné par l'informatique, je suis actuellement étudiant
+                        ingénieur en informatique à Sup Galilée. Curieux et rigoureux,
+                        j'aime relever des défis techniques, apprendre de nouvelles technologies et travailler en équipe
+                        pour concevoir des solutions innovantes.<br /><br />
+
+                        🔍 Je recherche actuellement une alternance de 24 mois à partir de septembre 2025 dans les
+                        domaines du développement web, logiciel ainsi que la Data
+                        afin de mettre en pratique mes compétences et continuer à progresser.<br /><br />
+
+                        🚀 En dehors du code, je suis passionné par le basketball, les jeux vidéo et les mangas, qui
+                        nourrissent ma créativité et mon esprit stratégique.
+                        Toujours motivé pour apprendre et partager, je suis prêt à relever de nouveaux défis
+                        professionnels !</p>
+                    <div class="propos__info">
                         <div>
-                            <a class="bouton bouton--flex">
-                                Envoyer
-                                <i class="uil uil-message bouton__icone"></i>
+                            <span class="propos__info-titre">22</span>
+                            <span class="propos__info-nom">Ans</span>
+                        </div>
+                        <div>
+                            <span class="propos__info-titre">15</span>
+                            <span class="propos__info-nom">Projets <br /> complétés</span>
+                        </div>
+                        <div>
+                            <span class="propos__info-titre">14</span>
+                            <span class="propos__info-nom">Langages <br /> manipulés</span>
+                        </div>
+                    </div>
+                    <div class="propos__boutons">
+                        <a class="bouton bouton--flex" download="" href="assets/pdf/Alexa-Cv.pdf">
+                            Télécharger mon CV
+                            <i class="uil uil-download-alt bouton__icone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--==================== PARCOURS ====================-->
+        <section class="parcours section" id="parcours">
+            <h2 class="section__titre">Parcours</h2>
+            <span class="section__soustitre">Mon évolution académique et professionnelle</span>
+            <div class="parcours__conteneur conteneur">
+                <div class="parcours__tabs">
+                    <div class="parcours__bouton bouton--flex parcours__actif" data-target="#formation">
+                        <i class="uil uil-graduation-cap parcours__icone"></i>
+                        Formation
+                    </div>
+                    <div class="parcours__bouton bouton--flex" data-target="#experience">
+                        <i class="uil uil-briefcase parcours__icone"></i>
+                        Expérience
+                    </div>
+                </div>
+                <div class="parcours__sections">
+                    <!--==================== PARCOURS FORMATION ====================-->
+                    <div class="parcours__contenu parcours__actif" data-content="" id="formation">
+                        <div class="parcours__donnees">
+                            <div>
+                                <h3 class="parcours__titre">Formation Ingénieur Informatique</h3>
+                                <span class="parcours__soustitre">Sup Galilée</span>
+                                <div class="parcours__calendrier">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2023-2025
+                                </div>
+                            </div>
+                            <div>
+                                <span class="parcours__ronds"></span>
+                                <span class="parcours__ligne"></span>
+                            </div>
+                        </div>
+                        <div class="parcours__donnees">
+                            <div></div>
+                            <div>
+                                <span class="parcours__ronds"></span>
+                                <span class="parcours__ligne"></span>
+                            </div>
+                            <div>
+                                <h3 class="parcours__titre">Licence Informatique</h3>
+                                <span class="parcours__soustitre">Université Sorbonne Paris Nord</span>
+                                <div class="parcours__calendrier">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2021-2023
+                                </div>
+                            </div>
+                        </div>
+                        <div class="parcours__donnees">
+                            <div>
+                                <h3 class="parcours__titre">Cursus Préparatoire Ingénieur Intégré</h3>
+                                <span class="parcours__soustitre">Sup Galilée</span>
+                                <div class="parcours__calendrier">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2020-2021
+                                </div>
+                            </div>
+                            <div>
+                                <span class="parcours__ronds"></span>
+                                <span class="parcours__ligne"></span>
+                            </div>
+                        </div>
+                        <div class="parcours__donnees">
+                            <div></div>
+                            <div>
+                                <span class="parcours__ronds"></span>
+                            </div>
+                            <div>
+                                <h3 class="parcours__titre">Terminale Scientifique</h3>
+                                <span class="parcours__soustitre">Lycée Maurice Utrillo</span>
+                                <div class="parcours__calendrier">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2019-2020
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==================== PARCOURS EXPERIENCE ====================-->
+                    <div class="parcours__contenu" data-content="" id="experience">
+                        <div class="parcours__donnees">
+                            <div>
+                                <h3 class="parcours__titre">Professeur particulier en Mathématiques</h3>
+                                <span class="parcours__soustitre">Complétude</span>
+                                <div class="parcours__calendrier">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Jan. 2025 - Aujourd'hui
+                                </div>
+                            </div>
+                            <div>
+                                <span class="parcours__ronds"></span>
+                                <span class="parcours__ligne"></span>
+                            </div>
+                        </div>
+                        <div class="parcours__donnees">
+                            <div></div>
+                            <div>
+                                <span class="parcours__ronds"></span>
+                                <span class="parcours__ligne"></span>
+                            </div>
+                            <div>
+                                <h3 class="parcours__titre">Chauffeur Livreur Polyvalent</h3>
+                                <span class="parcours__soustitre">Star Service</span>
+                                <div class="parcours__calendrier">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Sep. 2024 - Nov. 2024
+                                </div>
+                            </div>
+                        </div>
+                        <div class="parcours__donnees">
+                            <div>
+                                <h3 class="parcours__titre">Tuteur en Informatique</h3>
+                                <span class="parcours__soustitre">Université Sorbonne Paris Nord</span>
+                                <div class="parcours__calendrier">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Fev. 2024 - Mai 2024
+                                </div>
+                            </div>
+                            <div>
+                                <span class="parcours__ronds"></span>
+                                <span class="parcours__ligne"></span>
+                            </div>
+                        </div>
+                        <div class="parcours__donnees">
+                            <div></div>
+                            <div>
+                                <span class="parcours__ronds"></span>
+                            </div>
+                            <div>
+                                <h3 class="parcours__titre">Développeur Front-End &amp; Data Analyst</h3>
+                                <span class="parcours__soustitre">Ministère de la Culture</span>
+                                <div class="parcours__calendrier">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Juin 2023 - Juillet 2023
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--==================== PROJETS ====================-->
+        <section class="projets section" id="projets">
+            <h2 class="section__titre">Projets</h2>
+            <span class="section__soustitre">Mes réalisations et travaux</span>
+            <div class="projets__conteneur conteneur">
+                <!-- Toolbar : recherche + filtres -->
+                <div class="projets__toolbar">
+                    <div class="projets__search-wrap">
+                        <i class="uil uil-search"></i>
+                        <input class="projets__search" id="projets-search"
+                            placeholder="Rechercher un projet, un langage…" type="text" />
+                    </div>
+                    <div class="projets__filtres" id="filtres-type">
+                        <button class="filtre__btn actif" data-type="tous">Tous</button>
+                        <button class="filtre__btn" data-type="front">Front-end</button>
+                        <button class="filtre__btn" data-type="back">Back-end</button>
+                        <button class="filtre__btn" data-type="data">Data</button>
+                        <button class="filtre__btn" data-type="algo">Algo</button>
+                        <button class="filtre__btn" data-type="jeu">Jeu</button>
+                    </div>
+                    <div class="filtres__sep"></div>
+                    <div class="projets__filtres" id="filtres-lang">
+                        <button class="filtre__btn actif" data-lang="tous">Tous</button>
+                        <button class="filtre__btn" data-lang="C">C</button>
+                        <button class="filtre__btn" data-lang="Python">Python</button>
+                        <button class="filtre__btn" data-lang="JavaScript">JS</button>
+                        <button class="filtre__btn" data-lang="Java">Java</button>
+                        <button class="filtre__btn" data-lang="OCaml">OCaml</button>
+                        <button class="filtre__btn" data-lang="SQL">SQL</button>
+                    </div>
+                </div>
+                <!-- Grille projets -->
+                <ul class="projets__liste" id="projets-liste">
+                    <!-- data-type : type(s) du projet  -->
+                    <!-- data-lang : langage(s) principal -->
+                    <!-- data-search : mots-clés recherchables -->
+                    <!-- Projet 1 – Mary Aukart -->
+                    <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-0"
+                        data-search="mary aukart jeu course vue dessus solo duo personnage circuit musique c"
+                        data-type="jeu front">
+                        <div class="projet__thumb">
+                            <img alt="Mary Aukart" src="assets/img/projets/mary_aukart.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Mary Aukart</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">C</span>
+                                <span class="projet__tag">Jeu</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 2 – Game Sorting Robot -->
+                    <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-1"
+                        data-search="sorting robot tri grille algorithme avl liste chaînée circulaire c"
+                        data-type="algo">
+                        <div class="projet__thumb">
+                            <img alt="Game Sorting Robot" src="assets/img/projets/sorting_robot.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Sorting Robot</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">C</span>
+                                <span class="projet__tag">Algo</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 3 – Solveur booléen -->
+                    <li class="projet__carte" data-lang="OCaml" data-opens-modal="modal-projet-2"
+                        data-search="solveur booléen ocaml équations combinaisons variables" data-type="algo">
+                        <div class="projet__thumb">
+                            <img alt="Solveur booléen" src="assets/img/projets/solveur_booleen.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Solveur booléen</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">OCaml</span>
+                                <span class="projet__tag">Algo</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 4 – Jeu de dames -->
+                    <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-3"
+                        data-search="dames jeu réseau client serveur socket tcp c" data-type="jeu back">
+                        <div class="projet__thumb">
+                            <img alt="Jeu de dames" src="assets/img/projets/dames.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Jeu de dames</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">C</span>
+                                <span class="projet__tag">Réseau</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 5 – Wordle -->
+                    <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-4"
+                        data-search="wordle jeu lettres socket serveur client c" data-type="jeu back">
+                        <div class="projet__thumb">
+                            <img alt="Wordle" src="assets/img/projets/wordle.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Wordle</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">C</span>
+                                <span class="projet__tag">Réseau</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 6 – MineWeb -->
+                    <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-5"
+                        data-search="mineweb minecraft monstre interface web js html css son pixel"
+                        data-type="front jeu">
+                        <div class="projet__thumb">
+                            <img alt="MineWeb" src="assets/img/projets/mineweb.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">MineWeb</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">JS</span>
+                                <span class="projet__tag">Front</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 7 – Absentéisme -->
+                    <li class="projet__carte" data-lang="Python" data-opens-modal="modal-projet-6"
+                        data-search="absentéisme data python visualisation graphique analyse entreprise brésil"
+                        data-type="data">
+                        <div class="projet__thumb">
+                            <img alt="Absentéisme et Data" src="assets/img/projets/vdd.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Absentéisme &amp; Data</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">Python</span>
+                                <span class="projet__tag">Data</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 8 – City Mapper -->
+                    <li class="projet__carte" data-lang="Python SQL" data-opens-modal="modal-projet-7"
+                        data-search="city mapper dublin transport trajet itinéraire python sql graphe"
+                        data-type="data back">
+                        <div class="projet__thumb">
+                            <img alt="City Mapper" src="assets/img/projets/city_mapper.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">City Mapper</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">Python</span>
+                                <span class="projet__tag">SQL</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 9 – Simulateur de trains -->
+                    <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-8"
+                        data-search="trains simulateur réseau ferroviaire rails wagons gares js html css"
+                        data-type="front">
+                        <div class="projet__thumb">
+                            <img alt="Simulateur de trains" src="assets/img/projets/train.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Simulateur trains</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">JS</span>
+                                <span class="projet__tag">Front</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 10 – Messagerie -->
+                    <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-9"
+                        data-search="messagerie chat temps réel client serveur threads socket c" data-type="back">
+                        <div class="projet__thumb">
+                            <img alt="Messagerie" src="assets/img/projets/messagerie.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Messagerie</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">C</span>
+                                <span class="projet__tag">Back</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 11 – Automate cellulaire -->
+                    <li class="projet__carte" data-lang="Java" data-opens-modal="modal-projet-10"
+                        data-search="automate cellulaire java xml jeu de la vie sierpinski grille simulation"
+                        data-type="algo">
+                        <div class="projet__thumb">
+                            <img alt="Automate cellulaire" src="assets/img/projets/automate.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Automate cellulaire</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">Java</span>
+                                <span class="projet__tag">Algo</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 12 – Puissance 4 -->
+                    <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-11"
+                        data-search="puissance 4 ia minimax intelligence artificielle jeu c terminal"
+                        data-type="jeu algo">
+                        <div class="projet__thumb">
+                            <img alt="Puissance 4" src="assets/img/projets/puissance4.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Puissance 4</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">C</span>
+                                <span class="projet__tag">Jeu</span>
+                                <span class="projet__tag">IA</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 13 – Analyse de données -->
+                    <li class="projet__carte" data-lang="Python" data-opens-modal="modal-projet-12"
+                        data-search="analyse données covid logements yvelines hauts-de-seine matlab excel acp chi2 statistiques"
+                        data-type="data">
+                        <div class="projet__thumb">
+                            <img alt="Analyse de données" src="assets/img/projets/add.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Analyse de données</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">Matlab</span>
+                                <span class="projet__tag">Excel</span>
+                                <span class="projet__tag">Data</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 14 – Inversion de matrice -->
+                    <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-13"
+                        data-search="inversion matrice schur bloc stabilité numérique c" data-type="algo">
+                        <div class="projet__thumb">
+                            <img alt="Inversion de matrice" src="assets/img/projets/matrice.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Inversion matrice</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">C</span>
+                                <span class="projet__tag">Algo</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 15 – Portfolio -->
+                    <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-14"
+                        data-search="portfolio site web html css javascript php navigation" data-type="front">
+                        <div class="projet__thumb">
+                            <img alt="Site portfolio" src="assets/img/projets/portfolio.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Site portfolio</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">JS</span>
+                                <span class="projet__tag">Front</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Projet 16 – AirBall -->
+                    <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-15"
+                        data-search="airball basketball jeu navigateur html css js" data-type="jeu front">
+                        <div class="projet__thumb">
+                            <img alt="AirBall" src="assets/img/projets/airball.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">AirBall</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">JS</span>
+                                <span class="projet__tag">Jeu</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <!-- Message aucun résultat -->
+                    <li class="projets__vide" id="projets-vide">Aucun projet ne correspond à ta recherche.</li>
+                </ul>
+            </div>
+        </section>
+        <!--==================== COMPETENCES ====================-->
+        <section class="competences section" id="competences">
+            <h2 class="section__titre">Compétences</h2>
+            <span class="section__soustitre">Mon savoir-faire technique et mes atouts</span>
+            <div class="competences__conteneur conteneur grille">
+                <div class="competences__groupe">
+                    <h3 class="competences__groupe-titre">
+                        <i class="uil uil-brackets-curly"></i> Langages
+                    </h3>
+                    <div class="competences__liste">
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">C / C++</span>
+                                <span class="competences__niveau">Avancé</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">Python</span>
+                                <span class="competences__niveau">Avancé</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">Java</span>
+                                <span class="competences__niveau">Intermédiaire</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">JavaScript</span>
+                                <span class="competences__niveau">Intermédiaire</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">OCaml</span>
+                                <span class="competences__niveau">Intermédiaire</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">Julia</span>
+                                <span class="competences__niveau">Notions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="competences__groupe">
+                    <h3 class="competences__groupe-titre">
+                        <i class="uil uil-window-section"></i> Web &amp; Données
+                    </h3>
+                    <div class="competences__liste">
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">HTML / CSS</span>
+                                <span class="competences__niveau">Avancé</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">PHP</span>
+                                <span class="competences__niveau">Intermédiaire</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">SQL</span>
+                                <span class="competences__niveau">Intermédiaire</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">Matlab</span>
+                                <span class="competences__niveau">Intermédiaire</span>
+                            </div>
+                        </div>
+                        <div class="competences__item">
+                            <i class="uil uil-check-circle competences__icone"></i>
+                            <div>
+                                <span class="competences__nom">MIPS / LC-3</span>
+                                <span class="competences__niveau">Notions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--==================== CONTACT ====================-->
+        <section class="contact section" id="contact">
+            <h2 class="section__titre">Contact</h2>
+            <span class="section__soustitre">Échangeons ensemble !</span>
+            <div class="contact__conteneur conteneur grille">
+                <div>
+                    <div class="contact__information">
+                        <i class="uil uil-envelope-alt contact__icone"></i>
+                        <div>
+                            <h3 class="contact__titre">Email :</h3>
+                            <span class="contact__soustitre"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                    data-cfemail="5a3b23373b3474303b28331a3f3e2f742f34332c772a3b2833296b69743c28">[email&#160;protected]</a></span>
+                        </div>
+                    </div>
+                    <div class="contact__information">
+                        <i class="uil uil-linkedin contact__icone"></i>
+                        <div>
+                            <h3 class="contact__titre">LinkedIn :</h3>
+                            <a class="contact__soustitre" href="https://www.linkedin.com/in/ayman-jari/"
+                                target="_blank">
+                                linkedin.com/in/ayman-jari/
                             </a>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </section>
+                <form action="" class="contact__form" id="contact-form">
+                    <div class="contact__entrees grille">
+                        <div class="contact__contenu">
+                            <label class="contact__label" for="contact-prenom">Prénom</label>
+                            <input class="contact__entree" id="contact-prenom" required="" type="text" />
+                        </div>
+                        <div class="contact__contenu">
+                            <label class="contact__label" for="contact-nom">Nom</label>
+                            <input class="contact__entree" id="contact-nom" required="" type="text" />
+                        </div>
+                        <div class="contact__contenu">
+                            <label class="contact__label" for="contact-email">Email</label>
+                            <input class="contact__entree" id="contact-email" required="" type="email" />
+                        </div>
+                        <div class="contact__contenu">
+                            <label class="contact__label" for="contact-objet">Objet</label>
+                            <input class="contact__entree" id="contact-objet" required="" type="text" />
+                        </div>
+                        <div class="contact__contenu contact__msg">
+                            <label class="contact__label" for="contact-message">Message</label>
+                            <textarea class="contact__entree" cols="0" id="contact-message" required=""
+                                rows="7"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="bouton bouton--flex" type="submit">
+                            Envoyer
+                            <i class="uil uil-message bouton__icone"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__conteneur conteneur">
+            <h1 class="footer__titre">Ayman JARI</h1>
+            <ul class="footer__liens">
+                <li><a class="footer__lien" href="#propos">À propos</a></li>
+                <li><a class="footer__lien" href="#parcours">Parcours</a></li>
+                <li><a class="footer__lien" href="#projets">Projets</a></li>
+                <li><a class="footer__lien" href="#competences">Compétences</a></li>
+                <li><a class="footer__lien" href="#contact">Contact</a></li>
+            </ul>
+            <div class="footer__socials">
+                <a class="footer__social-icone" href="https://www.linkedin.com/in/ayman-jari/" target="_blank">
+                    <i class="uil uil-linkedin"></i>
+                </a>
+                <a class="footer__social-icone" href="https://github.com/" target="_blank">
+                    <i class="uil uil-github"></i>
+                </a>
+            </div>
+            <span class="footer__copy">© 2025 Ayman JARI. Tous droits réservés.</span>
+        </div>
+    </footer>
+    <!--==================== SCROLL UP ====================-->
+    <a class="scrollup" href="#" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icone"></i>
+    </a>
+    <!--==================== MAIN JS ====================-->
 
-            <!--==================== FOOTER ====================-->
-            <section class="">
+    <div class="projet__modal" data-modal-id="modal-projet-0" id="modal-projet-0">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Mary Aukart" class="projet__modal-img" src="assets/img/projets/mary_aukart.png" />
+                <h4 class="projet__modal-titre">Mary Aukart</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Programmation d'un jeu de
+                course en vue du dessus jouable tout seul ou à deux joueurs.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> C</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Mode Solo (3 tours
+                chrono) et mode Duo (premier à 3 tours). Choix parmi 4 personnages et 4 circuits. Différentes musiques
+                d'ambiance.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-1" id="modal-projet-1">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Sorting Robot" class="projet__modal-img" src="assets/img/projets/sorting_robot.png" />
+                <h4 class="projet__modal-titre">Game Sorting Robot</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Développement de
+                différentes stratégies algorithmiques afin d'optimiser les déplacements d'un robot pour trier des pièces
+                colorées sur une grille.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> C</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnement :</span> 4 algorithmes
+                implémentés : parcours ligne/colonne, circulaire, listes chaînées par couleur, arbre AVL. Chaque méthode
+                améliore la rapidité notamment pour les grandes grilles.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-2" id="modal-projet-2">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Solveur booléen" class="projet__modal-img" src="assets/img/projets/solveur_booleen.png" />
+                <h4 class="projet__modal-titre">Solveur booléen</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Implémentation d'un
+                solveur booléen calculant l'ensemble des solutions d'un système d'équations booléennes.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> OCaml</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnement :</span> Détermination des
+                variables → génération de toutes les combinaisons → évaluation et filtrage des solutions.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-3" id="modal-projet-3">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Jeu de dames" class="projet__modal-img" src="assets/img/projets/dames.png" />
+                <h4 class="projet__modal-titre">Jeu de dames</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Développement d'un serveur
+                et d'un client jouant aux dames en ligne contre d'autres équipes.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> C</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Serveur
+                multi-parties via sockets TCP/IP, règles complètes (déplacements, captures, conditions de victoire),
+                rapport de match automatique.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-4" id="modal-projet-4">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Wordle" class="projet__modal-img" src="assets/img/projets/wordle.png" />
+                <h4 class="projet__modal-titre">Wordle</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Développement du jeu
+                Wordle avec une architecture serveur-client.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> C</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Le serveur choisit
+                un mot de 5 lettres, le client envoie ses propositions, le serveur retourne les indices sur les lettres
+                en temps réel via sockets.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-5" id="modal-projet-5">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="MineWeb" class="projet__modal-img" src="assets/img/projets/mineweb.png" />
+                <h4 class="projet__modal-titre">MineWeb</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Interface web interactive
+                simulant la vie d'un monstre inspiré de Minecraft.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> HTML, CSS, JavaScript</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Actions (courir,
+                combattre, manger, dormir, travailler) affectant vie/faim/argent. Journal temps réel, design pixelisé,
+                sons d'ambiance.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-6" id="modal-projet-6">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Absentéisme" class="projet__modal-img" src="assets/img/projets/vdd.png" />
+                <h4 class="projet__modal-titre">Absentéisme et Data</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Étude des causes et
+                tendances de l'absentéisme dans une entreprise de messagerie au Brésil.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> Python</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Visualisations par
+                jour/mois/saison, analyse des causes (maladie, blessure, injustifié), identification des périodes à
+                risque.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-7" id="modal-projet-7">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="City Mapper" class="projet__modal-img" src="assets/img/projets/city_mapper.png" />
+                <h4 class="projet__modal-titre">City Mapper</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Application de
+                planification de trajet en transport en commun pour Dublin.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> Python, SQL</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Saisie manuelle ou
+                clic sur carte, affichage d'itinéraires, filtre sur le nombre de changements et modes de transport.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-8" id="modal-projet-8">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Simulateur trains" class="projet__modal-img" src="assets/img/projets/train.png" />
+                <h4 class="projet__modal-titre">Simulateur de trains</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Simulateur interactif
+                permettant de concevoir et observer un réseau ferroviaire en mouvement.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> HTML, CSS, JavaScript</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Placement de rails
+                sur une grille, ajout de trains multi-wagons, décors interactifs (gares, eau, forêts).</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-9" id="modal-projet-9">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Messagerie" class="projet__modal-img" src="assets/img/projets/messagerie.png" />
+                <h4 class="projet__modal-titre">Messagerie</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Système de messagerie en
+                temps réel entre plusieurs utilisateurs via terminal.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> C</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Architecture
+                client-serveur, threads asynchrones, verrous de données partagées, journalisation complète des échanges.
+            </p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-10" id="modal-projet-10">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Automate cellulaire" class="projet__modal-img" src="assets/img/projets/automate.png" />
+                <h4 class="projet__modal-titre">Automate cellulaire</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Simulateur d'automate
+                cellulaire avec règles définies par l'utilisateur via XML.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> Java</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Configurations
+                prédéfinies (Sierpinski, Jeu de la Vie), règles d'initialisation/transition/voisinage personnalisables.
+            </p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-11" id="modal-projet-11">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Puissance 4" class="projet__modal-img" src="assets/img/projets/puissance4.png" />
+                <h4 class="projet__modal-titre">Puissance 4</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Puissance 4 avec mode
+                Joueur vs Joueur et Joueur vs IA (algorithme Minimax).</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> C</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Interface terminal,
+                arbre de décision Minimax pour l'IA, grille affichée et saisie interactive.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-12" id="modal-projet-12">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Analyse de données" class="projet__modal-img" src="assets/img/projets/add.png" />
+                <h4 class="projet__modal-titre">Analyse de données</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Étude de l'influence du
+                Covid-19 sur la taille des logements vendus dans les Yvelines et Hauts-de-Seine (2019–2023).</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> Excel, Matlab</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnement :</span> Analyse préliminaire
+                Excel, test du χ², ACP normée Matlab — mise en évidence d'une corrélation post-confinement/augmentation
+                du nombre de pièces.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-13" id="modal-projet-13">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Inversion matrice" class="projet__modal-img" src="assets/img/projets/matrice.png" />
+                <h4 class="projet__modal-titre">Inversion de matrice</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Programme calculant
+                l'inverse d'une matrice donnée dans un fichier texte.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> C</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnement :</span> Division en
+                sous-matrices + formule de Schur, meilleure stabilité numérique et complexité réduite par rapport aux
+                méthodes classiques.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-14" id="modal-projet-14">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Portfolio" class="projet__modal-img" src="assets/img/projets/portfolio.png" />
+                <h4 class="projet__modal-titre">Site portfolio</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Portfolio interactif
+                présentant mon parcours, mes compétences et mes projets.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> HTML, CSS, JavaScript, PHP
+            </p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Navigation fluide,
+                galerie de projets avec modals, section contact, mode sombre/clair.</p>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-15" id="modal-projet-15">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="AirBall" class="projet__modal-img" src="assets/img/projets/airball.png" />
+                <h4 class="projet__modal-titre">AirBall</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Jeu de basketball
+                interactif jouable directement dans le navigateur.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> HTML, CSS, JavaScript</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Marquer des paniers
+                dans le temps imparti, score en temps réel.</p>
+            <div class="projet__modal-txt">
+                <a href="airball/menu.html" class="bouton bouton--flex projet__modal-lien" target="_blank">
+                    Jouer à AirBall <i class="uil uil-play bouton__icone"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
-            </section>
-            
-        </main>
+    <script src="assets/js/main.js"></script>
+</body>
 
-        <!--==================== FOOTER ====================-->
-        <footer class="footer">
-        </footer>
-        
-        <!--==================== SCROLL TOP ====================-->
-        
-        <!--==================== MAIN JS ====================-->
-        <script src="assets/js/main.js"></script>
-    </body>
 </html>
