@@ -20,6 +20,23 @@ if (navOverlay) navOverlay.addEventListener('click', closeMenu)
 
 document.querySelectorAll('.nav__link').forEach(link => link.addEventListener('click', closeMenu))
 
+document.querySelectorAll('.cv-preview').forEach(preview => {
+    preview.addEventListener('click', () => {
+        const modalId = preview.dataset.opensCv;
+        document.querySelectorAll('.cv__modal').forEach(m => m.classList.remove('modal-actif'));
+        document.getElementById(modalId).classList.add('modal-actif');
+    });
+});
+
+document.querySelectorAll('.cv__modal').forEach(modal => {
+    modal.addEventListener('click', e => {
+        if (e.target === modal) modal.classList.remove('modal-actif');
+    });
+    modal.querySelector('.cv__modal-close').addEventListener('click', () => {
+        modal.classList.remove('modal-actif');
+    });
+});
+
 /*==================== PARCOURS ====================*/
 const tabs = document.querySelectorAll('[data-target]'),
     tabContenus = document.querySelectorAll('[data-content]')
@@ -183,6 +200,16 @@ if (themeCheckbox) {
         if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('modal-actif'))
     })
 })()
+
+document.addEventListener('mousedown', (e) => {
+    const tag = e.target.tagName;
+    const isEditable = e.target.isContentEditable;
+    if (!['INPUT', 'TEXTAREA'].includes(tag) && !isEditable) {
+        if (document.activeElement && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+            document.activeElement.blur();
+        }
+    }
+});
 
 /*==================== MENTIONS LÉGALES ====================*/
 const mentionsModal = document.getElementById('mentions-modal')
