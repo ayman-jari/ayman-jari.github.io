@@ -1,0 +1,120 @@
+body {
+    font-family: 'Rajdhani', sans-serif;
+
+    margin: 0;
+    background-color: #222;
+    color: white;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 60px;
+    color: #e74c3c;
+}
+
+
+canvas {
+    width: 100%;
+    background-color: #444;
+    border: 5px solid rgba(255, 0, 0, 0.295);
+}
+
+.conteneur {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 1400px;
+    box-sizing: border-box;
+}
+
+#chat-box,
+#leaderboard {
+    background-color: #1f1a1a;
+    color: #fcecec;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#chat-box {
+    width: 20%;
+}
+
+#game-container {
+    width: 60%;
+    height: 500px;
+}
+
+#leaderboard {
+    width: 20%;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #2e1d1d;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: left;
+    word-break: break-word;
+}
+
+#chat-input {
+    background-color: #3c1f1f;
+    border: 1px solid #661d1d;
+    padding: 8px;
+    border-radius: 6px;
+    color: white;
+    resize: none;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+#chat-box button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#chat-box button:hover {
+    background-color: #c0392b;
+}
+
+#leaderboard h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    text-align: center;
+    color: #ff7675;
+}
+
+#leaderboard div {
+    background-color: #2e1d1d;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    text-align: left;
+}

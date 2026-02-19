@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* menu */
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+body.menu-open .menu {
+  display: flex;
+}
+
+.menu-card {
+  background: #1c1c2b;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  max-width: 90%;
+}
+
+.menu-card h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.field span {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.field input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #666;
+}
+
+.rules {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.rules h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* hud */
+.hud {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 15px;
+  font-size: 16px;
+  z-index: 5;
+}
+
+.hide {
+  display: none;
+}
+
+/* pour le fond */
+#arena {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-image: url("img/espace.png");
+  background-repeat: repeat;
+  background-size: 256px;
+  background-position: 0 0;
+  animation: scrollFond 2s linear infinite;
+}
+
+@keyframes scrollFond {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 256px;
+  }
+}
+
+.ship {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.asteroid {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.flash {
+  animation: flash 0.2s ease;
+}
+
+@keyframes flash {
+  from {
+    filter: brightness(3);
+  }
+
+  to {
+    filter: brightness(1);
+  }
+}
+
+#leftZone,
+#rightZone {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 50%;
+  opacity: 0;
+}
+
+#leftZone {
+  left: 0;
+}
+
+#rightZone {
+  right: 0;
+}
+
+#gameOverModal {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  background: #1c1c2b;
+  color: white;
+  max-width: 300px;
+  width: 90%;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#gameOverModal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.bouton-imp {
+  background: #048399;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.bouton-imp:hover {
+  background: #023f49;
+}
+
+.bouton-imp:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

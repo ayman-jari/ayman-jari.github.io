@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asteroids</title> <!-- jeu asteroids -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
+</head>
+
+<body>
+  <main class="wrap">
+    <h1>☄️ Asteroids</h1>
+    <section class="hud">
+      <div>Joueur: <span id="hudName">-</span></div>
+      <div>Score: <span id="score">0</span></div>
+      <div>Vies: <span id="lives">3</span></div>
+      <div>Temps: <span id="time">0</span>s</div>
+      <div>Meilleur session: <span id="bestSession">0</span></div>
+      <div>Meilleur local: <span id="best">0</span></div>
+    </section>
+    <section id="menu" class="menu">
+      <div class="menu-card">
+        <h1>☄️ Asteroids</h1>
+        <label class="field">
+          <span>Pseudo (faut le mettre)</span>
+          <input id="menuName" type="text" maxlength="20" placeholder="ton pseudo">
+        </label>
+        <div class="rules">
+          <h2>Règles du jeu</h2>
+          <ul>
+            <li>Éviter les astéroïdes avec flèches gauche/droite</li>
+            <li>3 vies, une collision = -1 vie</li>
+            <li>Score augmente avec temps, mais ça devient dur!</li>
+          </ul>
+        </div>
+        <button id="menuStart" class="bouton-imp" disabled>Jouer</button>
+      </div>
+    </section>
+    <div id="arena" class="arena" tabindex="0">
+    </div>
+    <dialog id="gameOverModal">
+      <h2>Game Over</h2>
+      <p>Score: <span id="finalScore">0</span></p>
+      <p id="savedMsg" class="muted"></p>
+      <button id="closeModal" class="bouton-imp">OK</button>
+    </dialog>
+    <script src="app.js"></script>
+  </main>
+</body>
+
+</html>

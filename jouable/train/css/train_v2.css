@@ -1,0 +1,261 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#plateau {
+    display: none;
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 3em;
+    margin: 0 auto;
+    width: fit-content; 
+    border: 2px solid black;
+    text-align: center;
+    background-color: #3b5998;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button {
+    font-family: monospace;
+    padding: 0;
+    border-radius: 8px;
+    height: 100px;
+    border: solid black 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.2s;
+    margin: 5px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button img {
+    width: 72px;
+    height: 72px;
+    margin: 0;
+    border: none;
+}
+
+#simulateur {
+    display: block;
+    margin: 0 auto;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+#boutons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#boutons input[type=image], #bouton_pause {
+    height: 32px;
+    margin: 0 3px;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+#boutons input[type=image]:hover, #bouton_pause:hover {
+	overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease, box-shadow 0.2s ease;
+	transform: scale(1.2);
+}
+
+#boutons input[type=image]:disabled {
+    border: 2px solid red;
+    opacity: 0.5;
+}
+
+#bouton_pause {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bouton_pause img {
+    width: 32px;
+	height: 32px;
+} 
+
+#togbot, #togM {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+#togbot input, #togM input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#nav0 {
+    top: 0;
+    right: 10%;
+	width: 10%;
+    position: absolute;
+    font-weight: bold;
+	list-style-type: none;
+}
+
+#nav {
+    top: 0;
+    left: 10%;
+	width: 10%;
+    position: absolute;
+    font-weight: bold;
+	list-style-type: none;
+}
+
+#son, #m {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    border-radius: 15px;
+    transition: background-color 0.4s;
+}
+
+#son::before, #m::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s;
+}
+
+input:checked + #son,  input:checked + #m{
+    background-color: #2196F3;
+}
+
+input:focus + #son, input:focus + #m {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + #son::before, input:checked + #m::before {
+    transform: translateX(30px);
+	-webkit-transform: translateX(30px);
+	-ms-transform: translateX(30px);
+}
+
+p {
+    font-family: monospace;
+    font-size: x-large;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+}
+
+#menu button {
+    margin: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease, box-shadow 0.2s ease;
+    width: 100px;
+    height: 100px;
+}
+
+#menu button img {
+    transition: transform 0.5s ease;
+}
+
+#menu button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#volume_menu, #volume {
+	position:absolute;
+    top: 10px;
+	right: 10px;
+    width: 200px;
+    height: 20px;
+    appearance: none;
+    background: white;
+    border-radius: 10px;
+    outline: none;
+}
+
+#volume_menu::-webkit-slider-thumb, #volume::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volume_controls {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: 5px auto 0; /* Adjust spacing as needed */
+}
+
+#volume_menu_down, #volume_menu_up, #volume_down, #volume_up {
+	position:absolute;
+	top: 5vh;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: large;
+    font-weight: bold;
+    color: #000000;
+}
+
+#volume_down, #volume_menu_down {
+	right: 7vw;
+}
+
+#volume_up, #volume_menu_up {
+	right: 1vw;
+}
+
+#retour {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#retour img {
+    vertical-align: middle;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.7s ease-out;
+}

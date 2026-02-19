@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Simulateur de trains</title>
+    <link rel="stylesheet" href="css/train_v2.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body style="background: url('images/fond.png'); background-size: cover;">
+    <div id="plateau">
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+        <span id="volume_down">Volume -</span>
+        <span id="volume_up">Volume +</span>
+        <button type="button" id="retour"><img src="images/fond.png" alt="Retour au menu">Menu</button>
+        <h1>Simulateur de trains</h1>
+        <canvas id="simulateur" width="1050" height="600">
+            Simulateur ferroviaire (votre navigateur ne prend pas en charge canvas)
+        </canvas>
+        <div id="boutons">
+            <input type="image" id="bouton_foret" alt="Forêt">
+            <input type="image" id="bouton_eau" alt="Eau">
+            <input type="image" id="bouton_rail_horizontal" alt="Rail horizontal">
+            <input type="image" id="bouton_rail_vertical" alt="Rail vertical">
+            <input type="image" id="bouton_rail_droite_vers_haut" alt="Rail droite vers haut">
+            <input type="image" id="bouton_rail_haut_vers_droite" alt="Rail haut vers droite">
+            <input type="image" id="bouton_rail_droite_vers_bas" alt="Rail droite vers bas">
+            <input type="image" id="bouton_rail_bas_vers_droite" alt="Rail bas vers droite">
+            <input type="image" id="bouton_train_1" alt="Locomotive seule">
+            <input type="image" id="bouton_train_2" alt="Locomotive et 1 wagon">
+            <input type="image" id="bouton_train_4" alt="Locomotive et 3 wagons">
+            <input type="image" id="bouton_train_6" alt="Locomotive et 5 wagons">
+            <input type="image" id="bouton_gare" alt="Gare">
+            <input type="image" id="bouton_gare_triage" alt="Gare de Triage">
+
+            <button type="button" id="bouton_pause"><img id="icone_pause" src="images/play.png" alt="Play"></button>
+
+            <nav id="nav">
+                <p>Poursuivre</p>
+                <label id="togM">
+                    <input type="checkbox" id="monstre">
+                    <span id="m"></span>
+                </label>
+            </nav>
+        </div>
+    </div>
+    <nav id="nav0">
+        <p>Musique</p>
+        <label id="togbot">
+            <input type="checkbox" id="musique_toggle">
+            <span id="son"></span>
+        </label>
+    </nav>
+    <div id="menu">
+        <input type="range" id="volume_menu" min="0" max="1" step="0.05" value="0.5">
+        <span id="volume_menu_down">Volume -</span>
+        <span id="volume_menu_up">Volume +</span>
+        <button type="button" id="monde_1"><img src="images/monde1/foret.png" alt="Monde 1"></button>
+        <button type="button" id="monde_2"><img src="images/monde2/foret.png" alt="Monde 2"></button>
+        <button type="button" id="monde_3"><img src="images/monde3/foret.png" alt="Monde 3"></button>
+        <button type="button" id="monde_4"><img src="images/monde4/foret.png" alt="Monde 4"></button>
+    </div>
+    
+    <audio id="backgroundMusicMenu" loop>
+        <source src="music/menu.mp3" type="audio/mp3">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+    <audio id="backgroundMusic" loop>
+        <source id="musicSource" src="" type="audio/mp3">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <script src="js/constantes.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/monstre.js" ></script>
+    <script src="js/fonctions.js"></script>
+    <script src="js/events.js"></script>
+</body>
+</html>
