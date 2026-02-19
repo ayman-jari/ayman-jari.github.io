@@ -55,23 +55,7 @@
             <div class="accueil__conteneur conteneur grille">
                 <div class="accueil__contenu grille">
                     <div class="accueil__img">
-                        <svg class="accueil__blob" viewbox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <mask id="mask0" mask-type="alpha">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"></path>
-                            </mask>
-                            <g mask="url(#mask0)">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z">
-                                </path>
-                                <image class="accueil__blob-img" x="20" xlink:href="assets/img/perfil.png" y="-40" />
-                            </g>
-                        </svg>
+                        <img src="assets/img/photo.png" alt="Ayman JARI" class="accueil__photo" />
                     </div>
                     <div class="accueil__donnees">
                         <h1 class="accueil__titre">Ayman JARI</h1>
@@ -92,17 +76,50 @@
                         j'aime relever des défis techniques, apprendre de nouvelles technologies et travailler en équipe
                         pour concevoir des solutions innovantes.<br /><br />
 
-                        🔍 Je recherche actuellement un stage de 2 à 4 mois à partir de mai 2026 dans les domaines du développement web, logiciel ainsi que la Data, afin de mettre en pratique mes compétences et continuer à progresser.<br /><br />
+                        🔍 Je recherche actuellement un stage de 2 à 4 mois à partir de mai 2026 dans les domaines du
+                        développement web, logiciel ainsi que la Data, afin de mettre en pratique mes compétences et
+                        continuer à progresser.<br /><br />
 
                         🚀 En dehors du code, je suis passionné par le basketball, les jeux vidéo et les mangas, qui
                         nourrissent ma créativité et mon esprit stratégique.
                         Toujours motivé pour apprendre et partager, je suis prêt à relever de nouveaux défis
                         professionnels !</p>
-                    <div class="propos__boutons">
-                        <a class="bouton bouton--flex" download="" href="assets/pdf/Alexa-Cv.pdf">
-                            Télécharger mon CV
-                            <i class="uil uil-download-alt bouton__icone"></i>
-                        </a>
+                    <div class="propos__cv">
+                        <div class="cv-previews">
+                            <div class="cv-preview" data-opens-cv="modal-cv-dev">
+                                <img src="assets/img/cv-dev-preview.png" alt="Aperçu CV Développeur" />
+                                <span>CV Développeur</span>
+                            </div>
+                            <div class="cv-preview" data-opens-cv="modal-cv-data">
+                                <img src="assets/img/cv-data-preview.png" alt="Aperçu CV Data" />
+                                <span>CV Data</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal CV Dev -->
+                    <div class="cv__modal" id="modal-cv-dev">
+                        <div class="cv__modal-contenu">
+                            <i class="uil uil-times cv__modal-close"></i>
+                            <h3 class="cv__modal-titre">CV Développeur</h3>
+                            <img src="assets/img/cv-dev-preview.png" alt="Aperçu CV Développeur"
+                                class="cv__modal-img" />
+                            <a href="assets/pdf/CV-Dev.pdf" target="_blank" class="bouton bouton--flex cv__modal-btn">
+                                Ouvrir en plein écran <i class="uil uil-external-link-alt bouton__icone"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal CV Data -->
+                    <div class="cv__modal" id="modal-cv-data">
+                        <div class="cv__modal-contenu">
+                            <i class="uil uil-times cv__modal-close"></i>
+                            <h3 class="cv__modal-titre">CV Data</h3>
+                            <img src="assets/img/cv-data-preview.png" alt="Aperçu CV Data" class="cv__modal-img" />
+                            <a href="assets/pdf/CV-Data.pdf" target="_blank" class="bouton bouton--flex cv__modal-btn">
+                                Ouvrir en plein écran <i class="uil uil-external-link-alt bouton__icone"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -124,121 +141,109 @@
                 </div>
                 <div class="parcours__sections">
                     <!--==================== PARCOURS FORMATION ====================-->
+                    <!--==================== PARCOURS FORMATION ====================-->
                     <div class="parcours__contenu parcours__actif" data-content="" id="formation">
-                        <div class="parcours__donnees">
-                            <div>
-                                <h3 class="parcours__titre">Formation Ingénieur Informatique</h3>
-                                <span class="parcours__soustitre">Sup Galilée</span>
-                                <div class="parcours__calendrier">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2023-2026
-                                </div>
-                            </div>
-                            <div>
-                                <span class="parcours__ronds"></span>
-                                <span class="parcours__ligne"></span>
-                            </div>
-                        </div>
-                        <div class="parcours__donnees">
-                            <div></div>
-                            <div>
-                                <span class="parcours__ronds"></span>
-                                <span class="parcours__ligne"></span>
-                            </div>
-                            <div>
-                                <h3 class="parcours__titre">Licence Informatique</h3>
-                                <span class="parcours__soustitre">Université Sorbonne Paris Nord</span>
-                                <div class="parcours__calendrier">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2021-2023
+                        <div class="timeline__item">
+                            <div class="timeline__point"></div>
+                            <div class="parcours__entree">
+                                <img src="assets/img/parcours/sup_galilee.png" class="parcours__logo"
+                                    alt="Sup Galilée" />
+                                <div>
+                                    <h3 class="parcours__titre">Formation Ingénieur Informatique</h3>
+                                    <span class="parcours__soustitre">Sup Galilée</span>
+                                    <div class="parcours__calendrier"><i class="uil uil-calendar-alt"></i> 2023-2026
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="parcours__donnees">
-                            <div>
-                                <h3 class="parcours__titre">Cursus Préparatoire Ingénieur Intégré</h3>
-                                <span class="parcours__soustitre">Sup Galilée</span>
-                                <div class="parcours__calendrier">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2020-2021
+                        <div class="timeline__item">
+                            <div class="timeline__point"></div>
+                            <div class="parcours__entree">
+                                <img src="assets/img/parcours/uspn.png" class="parcours__logo" alt="USPN" />
+                                <div>
+                                    <h3 class="parcours__titre">Licence Informatique</h3>
+                                    <span class="parcours__soustitre">Université Sorbonne Paris Nord</span>
+                                    <div class="parcours__calendrier"><i class="uil uil-calendar-alt"></i> 2021-2023
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <span class="parcours__ronds"></span>
-                                <span class="parcours__ligne"></span>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__point"></div>
+                            <div class="parcours__entree">
+                                <img src="assets/img/parcours/sup_galilee.png" class="parcours__logo"
+                                    alt="Sup Galilée" />
+                                <div>
+                                    <h3 class="parcours__titre">Cursus Préparatoire Ingénieur Intégré</h3>
+                                    <span class="parcours__soustitre">Sup Galilée</span>
+                                    <div class="parcours__calendrier"><i class="uil uil-calendar-alt"></i> 2020-2021
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="parcours__donnees">
-                            <div></div>
-                            <div>
-                                <span class="parcours__ronds"></span>
-                            </div>
-                            <div>
-                                <h3 class="parcours__titre">Terminale Scientifique</h3>
-                                <span class="parcours__soustitre">Lycée Maurice Utrillo</span>
-                                <div class="parcours__calendrier">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2019-2020
+                        <div class="timeline__item timeline__item--last">
+                            <div class="timeline__point"></div>
+                            <div class="parcours__entree">
+                                <img src="assets/img/parcours/utrillo.png" class="parcours__logo" alt="Lycée Utrillo" />
+                                <div>
+                                    <h3 class="parcours__titre">Terminale Scientifique</h3>
+                                    <span class="parcours__soustitre">Lycée Maurice Utrillo</span>
+                                    <div class="parcours__calendrier"><i class="uil uil-calendar-alt"></i> 2019-2020
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <!--==================== PARCOURS EXPERIENCE ====================-->
                     <div class="parcours__contenu" data-content="" id="experience">
-                        <div class="parcours__donnees">
-                            <div>
-                                <h3 class="parcours__titre">Professeur particulier en Mathématiques</h3>
-                                <span class="parcours__soustitre">Complétude</span>
-                                <div class="parcours__calendrier">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Jan. 2025 - Aujourd'hui
-                                </div>
-                            </div>
-                            <div>
-                                <span class="parcours__ronds"></span>
-                                <span class="parcours__ligne"></span>
-                            </div>
-                        </div>
-                        <div class="parcours__donnees">
-                            <div></div>
-                            <div>
-                                <span class="parcours__ronds"></span>
-                                <span class="parcours__ligne"></span>
-                            </div>
-                            <div>
-                                <h3 class="parcours__titre">Chauffeur Livreur Polyvalent</h3>
-                                <span class="parcours__soustitre">Star Service</span>
-                                <div class="parcours__calendrier">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Sep. 2024 - Nov. 2024
+                        <div class="timeline__item">
+                            <div class="timeline__point"></div>
+                            <div class="parcours__entree">
+                                <img src="assets/img/parcours/completude.png" class="parcours__logo" alt="Complétude" />
+                                <div>
+                                    <h3 class="parcours__titre">Professeur particulier en Mathématiques</h3>
+                                    <span class="parcours__soustitre">Complétude</span>
+                                    <div class="parcours__calendrier"><i class="uil uil-calendar-alt"></i> Jan. 2025 -
+                                        Aujourd'hui</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="parcours__donnees">
-                            <div>
-                                <h3 class="parcours__titre">Tuteur en Informatique</h3>
-                                <span class="parcours__soustitre">Université Sorbonne Paris Nord</span>
-                                <div class="parcours__calendrier">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Fev. 2024 - Mai 2024
+                        <div class="timeline__item">
+                            <div class="timeline__point"></div>
+                            <div class="parcours__entree">
+                                <img src="assets/img/parcours/star_service.png" class="parcours__logo"
+                                    alt="Star Service" />
+                                <div>
+                                    <h3 class="parcours__titre">Chauffeur Livreur Polyvalent</h3>
+                                    <span class="parcours__soustitre">Star Service</span>
+                                    <div class="parcours__calendrier"><i class="uil uil-calendar-alt"></i> Sep. 2024 -
+                                        Nov. 2024</div>
                                 </div>
                             </div>
-                            <div>
-                                <span class="parcours__ronds"></span>
-                                <span class="parcours__ligne"></span>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__point"></div>
+                            <div class="parcours__entree">
+                                <img src="assets/img/parcours/uspn.png" class="parcours__logo" alt="USPN" />
+                                <div>
+                                    <h3 class="parcours__titre">Tuteur en Informatique</h3>
+                                    <span class="parcours__soustitre">Université Sorbonne Paris Nord</span>
+                                    <div class="parcours__calendrier"><i class="uil uil-calendar-alt"></i> Fev. 2024 -
+                                        Mai 2024</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="parcours__donnees">
-                            <div></div>
-                            <div>
-                                <span class="parcours__ronds"></span>
-                            </div>
-                            <div>
-                                <h3 class="parcours__titre">Développeur Front-End &amp; Data Analyst</h3>
-                                <span class="parcours__soustitre">Ministère de la Culture</span>
-                                <div class="parcours__calendrier">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Juin 2023 - Juillet 2023
+                        <div class="timeline__item timeline__item--last">
+                            <div class="timeline__point"></div>
+                            <div class="parcours__entree">
+                                <img src="assets/img/parcours/ministere.png" class="parcours__logo"
+                                    alt="Ministère de la Culture" />
+                                <div>
+                                    <h3 class="parcours__titre">Développeur Front-End &amp; Data Analyst</h3>
+                                    <span class="parcours__soustitre">Ministère de la Culture</span>
+                                    <div class="parcours__calendrier"><i class="uil uil-calendar-alt"></i> Juin 2023 -
+                                        Juillet 2023</div>
                                 </div>
                             </div>
                         </div>
@@ -253,28 +258,34 @@
             <div class="projets__conteneur conteneur">
                 <!-- Toolbar : recherche + filtres -->
                 <div class="projets__toolbar">
+                    <!-- Ligne 1 : recherche -->
                     <div class="projets__search-wrap">
                         <i class="uil uil-search"></i>
                         <input class="projets__search" id="projets-search"
                             placeholder="Rechercher un projet, un langage…" type="text" />
                     </div>
-                    <div class="projets__filtres" id="filtres-type">
-                        <button class="filtre__btn actif" data-type="tous">Tous</button>
-                        <button class="filtre__btn" data-type="front">Front-end</button>
-                        <button class="filtre__btn" data-type="back">Back-end</button>
-                        <button class="filtre__btn" data-type="data">Data</button>
-                        <button class="filtre__btn" data-type="algo">Algo</button>
-                        <button class="filtre__btn" data-type="jeu">Jeu</button>
-                    </div>
-                    <div class="filtres__sep"></div>
-                    <div class="projets__filtres" id="filtres-lang">
-                        <button class="filtre__btn actif" data-lang="tous">Tous</button>
-                        <button class="filtre__btn" data-lang="C">C</button>
-                        <button class="filtre__btn" data-lang="Python">Python</button>
-                        <button class="filtre__btn" data-lang="JavaScript">JS</button>
-                        <button class="filtre__btn" data-lang="Java">Java</button>
-                        <button class="filtre__btn" data-lang="OCaml">OCaml</button>
-                        <button class="filtre__btn" data-lang="SQL">SQL</button>
+                    <!-- Ligne 2 : filtres -->
+                    <div class="projets__filtres-row">
+                        <span class="filtres__label">Type</span>
+                        <div class="projets__filtres" id="filtres-type">
+                            <button class="filtre__btn actif" data-type="tous">Tous</button>
+                            <button class="filtre__btn" data-type="front">Front-end</button>
+                            <button class="filtre__btn" data-type="back">Back-end</button>
+                            <button class="filtre__btn" data-type="data">Data</button>
+                            <button class="filtre__btn" data-type="algo">Algo</button>
+                            <button class="filtre__btn" data-type="jeu">Jeu</button>
+                        </div>
+                        <span class="filtres__sep-v"></span>
+                        <span class="filtres__label">Langage</span>
+                        <div class="projets__filtres" id="filtres-lang">
+                            <button class="filtre__btn actif" data-lang="tous">Tous</button>
+                            <button class="filtre__btn" data-lang="C">C</button>
+                            <button class="filtre__btn" data-lang="Python">Python</button>
+                            <button class="filtre__btn" data-lang="JavaScript">JS</button>
+                            <button class="filtre__btn" data-lang="Java">Java</button>
+                            <button class="filtre__btn" data-lang="OCaml">OCaml</button>
+                            <button class="filtre__btn" data-lang="SQL">SQL</button>
+                        </div>
                     </div>
                 </div>
                 <!-- Grille projets -->
@@ -503,21 +514,7 @@
                         </div>
 
                     </li>
-                    <!-- Projet 15 – Portfolio -->
-                    <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-14"
-                        data-search="portfolio site web html css javascript php navigation" data-type="front">
-                        <div class="projet__thumb">
-                            <img alt="Site portfolio" src="assets/img/projets/portfolio.png" />
-                        </div>
-                        <div class="projet__infos">
-                            <h3 class="projet__titre">Site portfolio</h3>
-                            <div class="projet__tags">
-                                <span class="projet__tag">JS</span>
-                                <span class="projet__tag">Front</span>
-                            </div>
-                        </div>
 
-                    </li>
                     <!-- Projet 16 – AirBall -->
                     <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-15"
                         data-search="airball basketball jeu navigateur html css js" data-type="jeu front">
@@ -533,6 +530,72 @@
                         </div>
 
                     </li>
+
+                    <!-- Projet 17 – Asteroids -->
+                    <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-16"
+                        data-search="asteroids jeu vaisseau espace astéroïdes score collision html css javascript php"
+                        data-type="jeu front">
+                        <div class="projet__thumb">
+                            <img alt="Asteroids" src="assets/img/projets/asteroids.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Asteroids</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">JS</span>
+                                <span class="projet__tag">PHP</span>
+                                <span class="projet__tag">Jeu</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Projet 18 – REPARTOUT -->
+                    <li class="projet__carte" data-lang="Java" data-opens-modal="modal-projet-17"
+                        data-search="repartout pwa application web sav gestion interventions clients machines java jsp rest api telediag jpa sql"
+                        data-type="back">
+                        <div class="projet__thumb">
+                            <img alt="REPARTOUT" src="assets/img/projets/repartout.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">REPARTOUT</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">Java</span>
+                                <span class="projet__tag">Back-end</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Projet 19 – Anneau-Étoile -->
+                    <li class="projet__carte" data-lang="Python" data-opens-modal="modal-projet-18"
+                        data-search="anneau étoile optimisation combinatoire heuristique métaheuristique plne python algorithme graphe tsp"
+                        data-type="algo data">
+                        <div class="projet__thumb">
+                            <img alt="Anneau-Étoile" src="assets/img/projets/anneau_etoile.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Anneau-Étoile</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">Python</span>
+                                <span class="projet__tag">Algo</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Dictionnaire multilingue -->
+                    <li class="projet__carte" data-lang="Java" data-opens-modal="modal-projet-19"
+                        data-search="dictionnaire multilingue lift javafx xml java éditeur linguistique"
+                        data-type="front back">
+                        <div class="projet__thumb">
+                            <img alt="Dictionnaire multilingue" src="assets/img/projets/dico.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Dictionnaire multilingue</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">Java</span>
+                                <span class="projet__tag">JavaFX</span>
+                            </div>
+                        </div>
+                    </li>
+
                     <!-- Message aucun résultat -->
                     <li class="projets__vide" id="projets-vide">Aucun projet ne correspond à ta recherche.</li>
                 </ul>
@@ -548,66 +611,135 @@
                 <!-- LANGAGES -->
                 <h3 class="competences__sous-titre">Langages</h3>
                 <div class="competences__grille">
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="comp__logo"><span class="comp__nom">C</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="comp__logo"><span class="comp__nom">C++</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="comp__logo"><span class="comp__nom">Python</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="comp__logo"><span class="comp__nom">Java</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="comp__logo"><span class="comp__nom">JavaScript</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="comp__logo"><span class="comp__nom">TypeScript</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="comp__logo"><span class="comp__nom">PHP</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ocaml/ocaml-original.svg" alt="OCaml" class="comp__logo"><span class="comp__nom">OCaml</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/julia/julia-original.svg" alt="Julia" class="comp__logo"><span class="comp__nom">Julia</span></div>
-                    <div class="comp__item"><i class="uil uil-cpu comp__logo-icon"></i><span class="comp__nom">MIPS / LC-3</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"
+                            class="comp__logo"><span class="comp__nom">C</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                            alt="C++" class="comp__logo"><span class="comp__nom">C++</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            alt="Python" class="comp__logo"><span class="comp__nom">Python</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                            class="comp__logo"><span class="comp__nom">Java</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JavaScript" class="comp__logo"><span class="comp__nom">JavaScript</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                            alt="TypeScript" class="comp__logo"><span class="comp__nom">TypeScript</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
+                            class="comp__logo"><span class="comp__nom">PHP</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ocaml/ocaml-original.svg"
+                            alt="OCaml" class="comp__logo"><span class="comp__nom">OCaml</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/julia/julia-original.svg"
+                            alt="Julia" class="comp__logo"><span class="comp__nom">Julia</span></div>
+                    <div class="comp__item"><i class="uil uil-cpu comp__logo-icon"></i><span class="comp__nom">MIPS /
+                            LC-3</span></div>
                 </div>
 
                 <!-- FRONT-END -->
                 <h3 class="competences__sous-titre">Front-end</h3>
                 <div class="competences__grille">
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="comp__logo"><span class="comp__nom">HTML5</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="comp__logo"><span class="comp__nom">CSS3</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="comp__logo"><span class="comp__nom">React</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue" class="comp__logo"><span class="comp__nom">Vue</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="comp__logo"><span class="comp__nom">Angular</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javafx/javafx-original.svg" alt="JavaFX" class="comp__logo"><span class="comp__nom">JavaFX</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5" class="comp__logo"><span class="comp__nom">HTML5</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+                            class="comp__logo"><span class="comp__nom">CSS3</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                            alt="React" class="comp__logo"><span class="comp__nom">React</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue"
+                            class="comp__logo"><span class="comp__nom">Vue</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                            alt="Angular" class="comp__logo"><span class="comp__nom">Angular</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javafx/javafx-original.svg"
+                            alt="JavaFX" class="comp__logo"><span class="comp__nom">JavaFX</span></div>
                 </div>
 
                 <!-- BACK-END -->
                 <h3 class="competences__sous-titre">Back-end</h3>
                 <div class="competences__grille">
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="comp__logo"><span class="comp__nom">Node.js</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" class="comp__logo"><span class="comp__nom">Spring Boot</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg" alt="Tomcat" class="comp__logo"><span class="comp__nom">Tomcat</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="comp__logo"><span class="comp__nom">API REST</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" alt="Hibernate" class="comp__logo"><span class="comp__nom">Hibernate</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                            alt="Node.js" class="comp__logo"><span class="comp__nom">Node.js</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                            alt="Spring Boot" class="comp__logo"><span class="comp__nom">Spring Boot</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg"
+                            alt="Tomcat" class="comp__logo"><span class="comp__nom">Tomcat</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            alt="Python" class="comp__logo"><span class="comp__nom">API REST</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg"
+                            alt="Hibernate" class="comp__logo"><span class="comp__nom">Hibernate</span></div>
                 </div>
 
                 <!-- BASE DE DONNÉES -->
                 <h3 class="competences__sous-titre">Base de données</h3>
                 <div class="competences__grille">
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="comp__logo"><span class="comp__nom">PostgreSQL</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="comp__logo"><span class="comp__nom">SQL</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="comp__logo"><span class="comp__nom">MongoDB</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                            alt="PostgreSQL" class="comp__logo"><span class="comp__nom">PostgreSQL</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"
+                            class="comp__logo"><span class="comp__nom">SQL</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                            alt="MongoDB" class="comp__logo"><span class="comp__nom">MongoDB</span></div>
                 </div>
 
                 <!-- DATA -->
                 <h3 class="competences__sous-titre">Data</h3>
                 <div class="competences__grille">
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="comp__logo"><span class="comp__nom">Pandas</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="comp__logo"><span class="comp__nom">NumPy</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="Matlab" class="comp__logo"><span class="comp__nom">Matlab</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Excel" class="comp__logo"><span class="comp__nom">Excel</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                            alt="Pandas" class="comp__logo"><span class="comp__nom">Pandas</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                            alt="NumPy" class="comp__logo"><span class="comp__nom">NumPy</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg"
+                            alt="Matlab" class="comp__logo"><span class="comp__nom">Matlab</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                            alt="Excel" class="comp__logo"><span class="comp__nom">Excel</span></div>
                 </div>
 
                 <!-- OUTILS -->
                 <h3 class="competences__sous-titre">Outils & DevOps</h3>
                 <div class="competences__grille">
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="comp__logo"><span class="comp__nom">Git</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="comp__logo"><span class="comp__nom">GitHub</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="comp__logo"><span class="comp__nom">Docker</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="comp__logo"><span class="comp__nom">Linux</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" alt="Maven" class="comp__logo"><span class="comp__nom">Maven</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="comp__logo"><span class="comp__nom">VS Code</span></div>
-                    <div class="comp__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="IntelliJ" class="comp__logo"><span class="comp__nom">IntelliJ</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"
+                            class="comp__logo"><span class="comp__nom">Git</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub" class="comp__logo"><span class="comp__nom">GitHub</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                            alt="Docker" class="comp__logo"><span class="comp__nom">Docker</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                            alt="Linux" class="comp__logo"><span class="comp__nom">Linux</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg"
+                            alt="Maven" class="comp__logo"><span class="comp__nom">Maven</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                            alt="VS Code" class="comp__logo"><span class="comp__nom">VS Code</span></div>
+                    <div class="comp__item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg"
+                            alt="IntelliJ" class="comp__logo"><span class="comp__nom">IntelliJ</span></div>
                 </div>
 
             </div>
@@ -659,7 +791,7 @@
                 <a class="footer__social-icone" href="https://www.linkedin.com/in/ayman-jari/" target="_blank">
                     <i class="uil uil-linkedin"></i>
                 </a>
-                <a class="footer__social-icone" href="https://github.com/ayman-jari" target="_blank">
+                <a class="footer__social-icone" href="https://github.com/" target="_blank">
                     <i class="uil uil-github"></i>
                 </a>
             </div>
@@ -761,6 +893,11 @@
             <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Actions (courir,
                 combattre, manger, dormir, travailler) affectant vie/faim/argent. Journal temps réel, design pixelisé,
                 sons d'ambiance.</p>
+            <div class="projet__modal-txt">
+                <a href="jouable/mineweb/monster.html" class="bouton bouton--flex projet__modal-lien" target="_blank">
+                    Jouer à MineWeb <i class="uil uil-play bouton__icone"></i>
+                </a>
+            </div>
         </div>
     </div>
     <div class="projet__modal" data-modal-id="modal-projet-6" id="modal-projet-6">
@@ -804,6 +941,11 @@
             <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> HTML, CSS, JavaScript</p>
             <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Placement de rails
                 sur une grille, ajout de trains multi-wagons, décors interactifs (gares, eau, forêts).</p>
+            <div class="projet__modal-txt">
+                <a href="jouable/train/train_v2.html" class="bouton bouton--flex projet__modal-lien" target="_blank">
+                    Lancer le simulateur <i class="uil uil-play bouton__icone"></i>
+                </a>
+            </div>
         </div>
     </div>
     <div class="projet__modal" data-modal-id="modal-projet-9" id="modal-projet-9">
@@ -880,21 +1022,6 @@
                 méthodes classiques.</p>
         </div>
     </div>
-    <div class="projet__modal" data-modal-id="modal-projet-14" id="modal-projet-14">
-        <div class="projet__modal-contenu">
-            <i class="uil uil-times projet__modal-close"></i>
-            <div class="projet__modal-header">
-                <img alt="Portfolio" class="projet__modal-img" src="assets/img/projets/portfolio.png" />
-                <h4 class="projet__modal-titre">Site portfolio</h4>
-            </div>
-            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Portfolio interactif
-                présentant mon parcours, mes compétences et mes projets.</p>
-            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> HTML, CSS, JavaScript, PHP
-            </p>
-            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Navigation fluide,
-                galerie de projets avec modals, section contact, mode sombre/clair.</p>
-        </div>
-    </div>
     <div class="projet__modal" data-modal-id="modal-projet-15" id="modal-projet-15">
         <div class="projet__modal-contenu">
             <i class="uil uil-times projet__modal-close"></i>
@@ -908,10 +1035,90 @@
             <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Marquer des paniers
                 dans le temps imparti, score en temps réel.</p>
             <div class="projet__modal-txt">
-                <a href="airball/menu.html" class="bouton bouton--flex projet__modal-lien" target="_blank">
+                <a href="jouable/airball/menu.html" class="bouton bouton--flex projet__modal-lien" target="_blank">
                     Jouer à AirBall <i class="uil uil-play bouton__icone"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    <div class="projet__modal" data-modal-id="modal-projet-16" id="modal-projet-16">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Asteroids" class="projet__modal-img" src="assets/img/projets/asteroids.png" />
+                <h4 class="projet__modal-titre">Asteroids</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Jeu de type Asteroids
+                jouable dans le navigateur — contrôler un vaisseau spatial et survivre le plus longtemps possible face à
+                des astéroïdes de plus en plus rapides et volumineux.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> HTML, CSS, JavaScript, PHP
+            </p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Déplacement du
+                vaisseau avec hitbox précise, spawn progressif des astéroïdes (fréquence et taille croissantes), gestion
+                des vies, score en temps réel, meilleur score de session via PHP, fond étoilé animé en CSS, menu
+                d'accueil avec profil joueur sauvegardé en localStorage.</p>
+            <div class="projet__modal-txt">
+                <a href="jouable/asteroids/index.html" class="bouton bouton--flex projet__modal-lien" target="_blank">
+                    Jouer à Asteroids <i class="uil uil-play bouton__icone"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="projet__modal" data-modal-id="modal-projet-17" id="modal-projet-17">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="REPARTOUT" class="projet__modal-img" src="assets/img/projets/repartout.png" />
+                <h4 class="projet__modal-titre">REPARTOUT</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Application web de gestion
+                de SAV pour une entreprise de maintenance — suivi des clients, des machines et des interventions
+                techniques.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> Java (JAX-RS, JPA), JSP,
+                SQL, HTML, CSS</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> API REST complète
+                (CRUD clients, machines, interventions), intégration d'un webservice de télé-diagnostic TELEDIAG
+                générant automatiquement des interventions depuis des alertes machines, gestion des états d'intervention
+                (en attente, en cours, réalisée, annulée), interface JSP multi-vues déployée sur serveur Jakarta EE.</p>
+        </div>
+    </div>
+
+    <div class="projet__modal" data-modal-id="modal-projet-18" id="modal-projet-18">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Anneau-Étoile" class="projet__modal-img" src="assets/img/projets/anneau_etoile.png" />
+                <h4 class="projet__modal-titre">Anneau-Étoile</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Résolution du problème
+                d'optimisation combinatoire de l'anneau-étoile — trouver un réseau de stations reliées en cycle
+                minimisant à la fois la distance des affectations et le coût du trajet en anneau.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> Python (NumPy, SciPy,
+                Matplotlib)</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Trois approches
+                implémentées et comparées — heuristique constructive (p-médian + cycle glouton), métaheuristique
+                d'amélioration par recherche locale, et résolution exacte par Programmation Linéaire en Nombres Entiers
+                (PLNE) via SciPy. Génération de visualisations graphiques des solutions et comparaison des performances
+                selon les paramètres p et alpha.</p>
+        </div>
+    </div>
+
+    <div class="projet__modal" data-modal-id="modal-projet-19" id="modal-projet-19">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Dictionnaire multilingue" class="projet__modal-img" src="assets/img/projets/dico.png" />
+                <h4 class="projet__modal-titre">Dictionnaire multilingue</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Application graphique pour
+                l'édition et la consultation de dictionnaires multilingues au format LIFT, destinée aux chercheurs en
+                linguistique descriptive.</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> Java, JavaFX, XML</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Ouverture et
+                parsing de fichiers LIFT (SAX), affichage des entrées lexicales sous forme de tableau, filtrage
+                dynamique, formulaire d'édition complet, sauvegarde des modifications. Architecture MVC avec liaisons et
+                observables JavaFX.</p>
         </div>
     </div>
 
@@ -933,10 +1140,14 @@
             <p><a href="https://pages.github.com" target="_blank">https://pages.github.com</a></p>
             <h3 class="mentions__sous-titre">Données personnelles (RGPD)</h3>
             <p>Ce site ne collecte aucune donnée à des fins commerciales ou publicitaires.</p>
-            <p>Le formulaire de contact collecte uniquement votre nom, prénom et adresse email dans le but exclusif de répondre à votre message. Ces données sont transmises via le service EmailJS et ne sont ni stockées sur ce site, ni cédées à des tiers.</p>
-            <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit : jariayman.pro@gmail.com</p>
+            <p>Le formulaire de contact collecte uniquement votre nom, prénom et adresse email dans le but exclusif de
+                répondre à votre message. Ces données sont transmises via le service EmailJS et ne sont ni stockées sur
+                ce site, ni cédées à des tiers.</p>
+            <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos
+                données. Pour exercer ce droit : jariayman.pro@gmail.com</p>
             <h3 class="mentions__sous-titre">Cookies</h3>
-            <p>Ce site utilise uniquement le localStorage de votre navigateur pour mémoriser votre préférence de thème (clair/sombre). Aucun cookie tiers n'est déposé.</p>
+            <p>Ce site utilise uniquement le localStorage de votre navigateur pour mémoriser votre préférence de thème
+                (clair/sombre). Aucun cookie tiers n'est déposé.</p>
         </div>
     </div>
 
@@ -944,4 +1155,3 @@
 </body>
 
 </html>
-
