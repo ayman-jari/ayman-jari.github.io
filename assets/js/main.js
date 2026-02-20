@@ -20,23 +20,6 @@ if (navOverlay) navOverlay.addEventListener('click', closeMenu)
 
 document.querySelectorAll('.nav__link').forEach(link => link.addEventListener('click', closeMenu))
 
-document.querySelectorAll('.cv-preview').forEach(preview => {
-    preview.addEventListener('click', () => {
-        const modalId = preview.dataset.opensCv;
-        document.querySelectorAll('.cv__modal').forEach(m => m.classList.remove('modal-actif'));
-        document.getElementById(modalId).classList.add('modal-actif');
-    });
-});
-
-document.querySelectorAll('.cv__modal').forEach(modal => {
-    modal.addEventListener('click', e => {
-        if (e.target === modal) modal.classList.remove('modal-actif');
-    });
-    modal.querySelector('.cv__modal-close').addEventListener('click', () => {
-        modal.classList.remove('modal-actif');
-    });
-});
-
 /*==================== PARCOURS ====================*/
 const tabs = document.querySelectorAll('[data-target]'),
     tabContenus = document.querySelectorAll('[data-content]')
@@ -122,49 +105,43 @@ if (themeCheckbox) {
 
 /*==================== FILTRES & RECHERCHE PROJETS ====================*/
 ;(function () {
-    const searchInput  = document.getElementById('projets-search')
-    const cartes       = document.querySelectorAll('.projet__carte[data-search]')
-    const videMsg      = document.getElementById('projets-vide')
-    const filtresType  = document.querySelectorAll('#filtres-type .filtre__btn')
-    const filtresLang  = document.querySelectorAll('#filtres-lang .filtre__btn')
+    const searchInput = document.getElementById('projets-search')
+    const cartes      = document.querySelectorAll('.projet__carte[data-search]')
+    const videMsg     = document.getElementById('projets-vide')
+    const filtresBtns = document.querySelectorAll('#filtres-type .filtre__btn')
 
-    let activeType = 'tous'
-    let activeLang = 'tous'
-    let searchTerm = ''
+    const LANG_MAP = {
+        'lang-C':      c => /\bC\b/.test(c.dataset.lang || '') && !(c.dataset.lang || '').includes('OCaml'),
+        'lang-Python': c => (c.dataset.lang || '').includes('Python'),
+        'lang-Web':    c => ['JavaScript','TypeScript','PHP'].some(l => (c.dataset.lang || '').includes(l)),
+        'lang-Java':   c => (c.dataset.lang || '').includes('Java') && !(c.dataset.lang || '').includes('JavaScript'),
+    }
+
+    let activeFilter = 'tous'
+    let searchTerm   = ''
 
     function filterProjects() {
         let visible = 0
         cartes.forEach(carte => {
-            const types  = carte.dataset.type  || ''
-            const langs  = carte.dataset.lang  || ''
-            const search = carte.dataset.search || ''
-            const matchType   = activeType === 'tous' || types.includes(activeType)
-            const matchLang   = activeLang === 'tous' || langs.toLowerCase().includes(activeLang.toLowerCase())
-            const matchSearch = searchTerm === '' || search.toLowerCase().includes(searchTerm)
-            if (matchType && matchLang && matchSearch) {
-                carte.classList.remove('hidden')
-                visible++
-            } else {
-                carte.classList.add('hidden')
-            }
+            const types = carte.dataset.type || ''
+            let matchFilter
+            if      (activeFilter === 'tous')           matchFilter = true
+            else if (LANG_MAP[activeFilter])            matchFilter = LANG_MAP[activeFilter](carte)
+            else                                        matchFilter = types.split(' ').includes(activeFilter)
+
+            const matchSearch = !searchTerm || (carte.dataset.search || '').toLowerCase().includes(searchTerm)
+
+            if (matchFilter && matchSearch) { carte.classList.remove('hidden'); visible++ }
+            else                            { carte.classList.add('hidden') }
         })
         if (videMsg) videMsg.style.display = visible === 0 ? 'block' : 'none'
     }
 
-    filtresType.forEach(btn => {
+    filtresBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            filtresType.forEach(b => b.classList.remove('actif'))
+            filtresBtns.forEach(b => b.classList.remove('actif'))
             btn.classList.add('actif')
-            activeType = btn.dataset.type
-            filterProjects()
-        })
-    })
-
-    filtresLang.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filtresLang.forEach(b => b.classList.remove('actif'))
-            btn.classList.add('actif')
-            activeLang = btn.dataset.lang
+            activeFilter = btn.dataset.type
             filterProjects()
         })
     })
@@ -193,9 +170,7 @@ if (themeCheckbox) {
     })
 
     document.querySelectorAll('.projet__modal').forEach(modal => {
-        modal.addEventListener('click', e => {
-            if (e.target === modal) modal.classList.remove('modal-actif')
-        })
+        modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('modal-actif') })
         const closeBtn = modal.querySelector('.projet__modal-close')
         if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('modal-actif'))
     })

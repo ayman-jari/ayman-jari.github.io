@@ -1429,3 +1429,99 @@ textarea.contact__entree {
     color: var(--first-color);
     text-decoration: underline;
 }
+/*==================== AJOUTS ====================*/
+
+/* ---- CV preview : lien direct avec overlay au hover ---- */
+a.cv-preview {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cv-preview__img-wrap {
+    position: relative;
+    display: block;
+    border-radius: .4rem;
+    overflow: hidden;
+}
+
+.cv-preview__img-wrap img {
+    width: 130px;
+    display: block;
+    border-radius: .4rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    border: 2px solid var(--scroll-bar-color);
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.cv-preview:hover .cv-preview__img-wrap img {
+    border-color: var(--first-color);
+    box-shadow: 0 6px 24px rgba(0,0,0,.2);
+}
+
+.cv-preview__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+    opacity: 0;
+    transition: opacity .2s;
+    border-radius: .4rem;
+    color: #fff;
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.cv-preview__overlay i {
+    font-size: 1.4rem;
+}
+
+.cv-preview:hover .cv-preview__overlay {
+    opacity: 1;
+}
+
+/* ---- Badge jouable sur les cartes ---- */
+.projet__jouable-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .2rem;
+    font-size: .6rem;
+    font-weight: var(--font-semi-bold);
+    color: #15803d;
+    background-color: #dcfce7;
+    border-radius: 999px;
+    padding: .15rem .55rem;
+    width: fit-content;
+    letter-spacing: .01em;
+    margin-top: .1rem;
+}
+
+body.dark-theme .projet__jouable-badge {
+    background-color: rgba(22, 163, 74, 0.18);
+    color: #4ade80;
+}
+
+/* ---- Légende sous la toolbar ---- */
+.projets__legende {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+    margin-bottom: 1.25rem;
+}
+
+/* ---- Filtre Jeu actif en vert ---- */
+.filtre__btn--jeu.actif {
+    background-color: #16a34a;
+    border-color: #16a34a;
+    color: #fff;
+}
+
+.filtre__btn--jeu:hover {
+    border-color: #16a34a;
+    color: #16a34a;
+}

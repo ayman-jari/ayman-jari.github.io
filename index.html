@@ -86,38 +86,25 @@
                         professionnels !</p>
                     <div class="propos__cv">
                         <div class="cv-previews">
-                            <div class="cv-preview" data-opens-cv="modal-cv-dev">
-                                <img src="assets/img/cv-dev-preview.png" alt="Aperçu CV Développeur" />
+                            <a class="cv-preview" href="assets/pdf/CV-Dev.pdf" target="_blank">
+                                <div class="cv-preview__img-wrap">
+                                    <img src="assets/img/cv-dev-preview.png" alt="Aperçu CV Développeur" />
+                                    <div class="cv-preview__overlay">
+                                        <i class="uil uil-external-link-alt"></i>
+                                        <span>Ouvrir</span>
+                                    </div>
+                                </div>
                                 <span>CV Développeur</span>
-                            </div>
-                            <div class="cv-preview" data-opens-cv="modal-cv-data">
-                                <img src="assets/img/cv-data-preview.png" alt="Aperçu CV Data" />
-                                <span>CV Data</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal CV Dev -->
-                    <div class="cv__modal" id="modal-cv-dev">
-                        <div class="cv__modal-contenu">
-                            <i class="uil uil-times cv__modal-close"></i>
-                            <h3 class="cv__modal-titre">CV Développeur</h3>
-                            <img src="assets/img/cv-dev-preview.png" alt="Aperçu CV Développeur"
-                                class="cv__modal-img" />
-                            <a href="assets/pdf/CV-Dev.pdf" target="_blank" class="bouton bouton--flex cv__modal-btn">
-                                Ouvrir en plein écran <i class="uil uil-external-link-alt bouton__icone"></i>
                             </a>
-                        </div>
-                    </div>
-
-                    <!-- Modal CV Data -->
-                    <div class="cv__modal" id="modal-cv-data">
-                        <div class="cv__modal-contenu">
-                            <i class="uil uil-times cv__modal-close"></i>
-                            <h3 class="cv__modal-titre">CV Data</h3>
-                            <img src="assets/img/cv-data-preview.png" alt="Aperçu CV Data" class="cv__modal-img" />
-                            <a href="assets/pdf/CV-Data.pdf" target="_blank" class="bouton bouton--flex cv__modal-btn">
-                                Ouvrir en plein écran <i class="uil uil-external-link-alt bouton__icone"></i>
+                            <a class="cv-preview" href="assets/pdf/CV-Data.pdf" target="_blank">
+                                <div class="cv-preview__img-wrap">
+                                    <img src="assets/img/cv-data-preview.png" alt="Aperçu CV Data" />
+                                    <div class="cv-preview__overlay">
+                                        <i class="uil uil-external-link-alt"></i>
+                                        <span>Ouvrir</span>
+                                    </div>
+                                </div>
+                                <span>CV Data</span>
                             </a>
                         </div>
                     </div>
@@ -140,7 +127,6 @@
                     </div>
                 </div>
                 <div class="parcours__sections">
-                    <!--==================== PARCOURS FORMATION ====================-->
                     <!--==================== PARCOURS FORMATION ====================-->
                     <div class="parcours__contenu parcours__actif" data-content="" id="formation">
                         <div class="timeline__item">
@@ -264,35 +250,30 @@
                         <input class="projets__search" id="projets-search"
                             placeholder="Rechercher un projet, un langage…" type="text" />
                     </div>
-                    <!-- Ligne 2 : filtres -->
+                    <!-- Ligne 2 : filtres fusionnés -->
                     <div class="projets__filtres-row">
-                        <span class="filtres__label">Type</span>
                         <div class="projets__filtres" id="filtres-type">
                             <button class="filtre__btn actif" data-type="tous">Tous</button>
-                            <button class="filtre__btn" data-type="front">Front-end</button>
-                            <button class="filtre__btn" data-type="back">Back-end</button>
-                            <button class="filtre__btn" data-type="data">Data</button>
+                            <button class="filtre__btn" data-type="front">Front</button>
+                            <button class="filtre__btn" data-type="back">Back</button>
                             <button class="filtre__btn" data-type="algo">Algo</button>
-                            <button class="filtre__btn" data-type="jeu">Jeu</button>
-                        </div>
-                        <span class="filtres__sep-v"></span>
-                        <span class="filtres__label">Langage</span>
-                        <div class="projets__filtres" id="filtres-lang">
-                            <button class="filtre__btn actif" data-lang="tous">Tous</button>
-                            <button class="filtre__btn" data-lang="C">C</button>
-                            <button class="filtre__btn" data-lang="Python">Python</button>
-                            <button class="filtre__btn" data-lang="JavaScript">JS</button>
-                            <button class="filtre__btn" data-lang="Java">Java</button>
-                            <button class="filtre__btn" data-lang="OCaml">OCaml</button>
-                            <button class="filtre__btn" data-lang="SQL">SQL</button>
+                            <button class="filtre__btn" data-type="data">Data</button>
+                            <button class="filtre__btn" data-type="app">App</button>
+                            <button class="filtre__btn filtre__btn--jeu" data-type="jeu">Jeu</button>
+                            <span class="filtres__sep-v"></span>
+                            <button class="filtre__btn" data-type="lang-C">C</button>
+                            <button class="filtre__btn" data-type="lang-Python">Python</button>
+                            <button class="filtre__btn" data-type="lang-JS">JS</button>
+                            <button class="filtre__btn" data-type="lang-Java">Java</button>
                         </div>
                     </div>
                 </div>
+                <!-- Légende badge jouable -->
+                <p class="projets__legende"><span class="projet__jouable-badge">🎮 Jouable</span> = accessible
+                    directement dans le navigateur</p>
                 <!-- Grille projets -->
                 <ul class="projets__liste" id="projets-liste">
-                    <!-- data-type : type(s) du projet  -->
-                    <!-- data-lang : langage(s) principal -->
-                    <!-- data-search : mots-clés recherchables -->
+
                     <!-- Projet 1 – Mary Aukart -->
                     <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-0"
                         data-search="mary aukart jeu course vue dessus solo duo personnage circuit musique c"
@@ -307,8 +288,8 @@
                                 <span class="projet__tag">Jeu</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 2 – Game Sorting Robot -->
                     <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-1"
                         data-search="sorting robot tri grille algorithme avl liste chaînée circulaire c"
@@ -323,8 +304,8 @@
                                 <span class="projet__tag">Algo</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 3 – Solveur booléen -->
                     <li class="projet__carte" data-lang="OCaml" data-opens-modal="modal-projet-2"
                         data-search="solveur booléen ocaml équations combinaisons variables" data-type="algo">
@@ -338,8 +319,8 @@
                                 <span class="projet__tag">Algo</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 4 – Jeu de dames -->
                     <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-3"
                         data-search="dames jeu réseau client serveur socket tcp c" data-type="jeu back">
@@ -353,8 +334,8 @@
                                 <span class="projet__tag">Réseau</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 5 – Wordle -->
                     <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-4"
                         data-search="wordle jeu lettres socket serveur client c" data-type="jeu back">
@@ -368,12 +349,12 @@
                                 <span class="projet__tag">Réseau</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 6 – MineWeb -->
                     <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-5"
                         data-search="mineweb minecraft monstre interface web js html css son pixel"
-                        data-type="front jeu">
+                        data-type="front jeu" data-jouable="true">
                         <div class="projet__thumb">
                             <img alt="MineWeb" src="assets/img/projets/mineweb.png" />
                         </div>
@@ -383,9 +364,10 @@
                                 <span class="projet__tag">JS</span>
                                 <span class="projet__tag">Front</span>
                             </div>
+                            <span class="projet__jouable-badge">🎮 Jouable</span>
                         </div>
-
                     </li>
+
                     <!-- Projet 7 – Absentéisme -->
                     <li class="projet__carte" data-lang="Python" data-opens-modal="modal-projet-6"
                         data-search="absentéisme data python visualisation graphique analyse entreprise brésil"
@@ -400,12 +382,12 @@
                                 <span class="projet__tag">Data</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 8 – City Mapper -->
-                    <li class="projet__carte" data-lang="Python SQL" data-opens-modal="modal-projet-7"
-                        data-search="city mapper dublin transport trajet itinéraire python sql graphe"
-                        data-type="data back">
+                    <li class="projet__carte" data-lang="Python" data-opens-modal="modal-projet-7"
+                        data-search="city mapper dublin transport trajet itinéraire python sql graphe application"
+                        data-type="app data back">
                         <div class="projet__thumb">
                             <img alt="City Mapper" src="assets/img/projets/city_mapper.png" />
                         </div>
@@ -416,12 +398,12 @@
                                 <span class="projet__tag">SQL</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 9 – Simulateur de trains -->
                     <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-8"
                         data-search="trains simulateur réseau ferroviaire rails wagons gares js html css"
-                        data-type="front">
+                        data-type="front jeu" data-jouable="true">
                         <div class="projet__thumb">
                             <img alt="Simulateur de trains" src="assets/img/projets/train.png" />
                         </div>
@@ -431,9 +413,10 @@
                                 <span class="projet__tag">JS</span>
                                 <span class="projet__tag">Front</span>
                             </div>
+                            <span class="projet__jouable-badge">🎮 Jouable</span>
                         </div>
-
                     </li>
+
                     <!-- Projet 10 – Messagerie -->
                     <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-9"
                         data-search="messagerie chat temps réel client serveur threads socket c" data-type="back">
@@ -447,8 +430,8 @@
                                 <span class="projet__tag">Back</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 11 – Automate cellulaire -->
                     <li class="projet__carte" data-lang="Java" data-opens-modal="modal-projet-10"
                         data-search="automate cellulaire java xml jeu de la vie sierpinski grille simulation"
@@ -463,8 +446,8 @@
                                 <span class="projet__tag">Algo</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 12 – Puissance 4 -->
                     <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-11"
                         data-search="puissance 4 ia minimax intelligence artificielle jeu c terminal"
@@ -480,8 +463,8 @@
                                 <span class="projet__tag">IA</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 13 – Analyse de données -->
                     <li class="projet__carte" data-lang="Python" data-opens-modal="modal-projet-12"
                         data-search="analyse données covid logements yvelines hauts-de-seine matlab excel acp chi2 statistiques"
@@ -497,8 +480,8 @@
                                 <span class="projet__tag">Data</span>
                             </div>
                         </div>
-
                     </li>
+
                     <!-- Projet 14 – Inversion de matrice -->
                     <li class="projet__carte" data-lang="C" data-opens-modal="modal-projet-13"
                         data-search="inversion matrice schur bloc stabilité numérique c" data-type="algo">
@@ -512,12 +495,12 @@
                                 <span class="projet__tag">Algo</span>
                             </div>
                         </div>
-
                     </li>
 
-                    <!-- Projet 16 – AirBall -->
+                    <!-- Projet 15 – AirBall -->
                     <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-15"
-                        data-search="airball basketball jeu navigateur html css js" data-type="jeu front">
+                        data-search="airball basketball jeu navigateur html css js" data-type="jeu front"
+                        data-jouable="true">
                         <div class="projet__thumb">
                             <img alt="AirBall" src="assets/img/projets/airball.png" />
                         </div>
@@ -527,14 +510,14 @@
                                 <span class="projet__tag">JS</span>
                                 <span class="projet__tag">Jeu</span>
                             </div>
+                            <span class="projet__jouable-badge">🎮 Jouable</span>
                         </div>
-
                     </li>
 
-                    <!-- Projet 17 – Asteroids -->
+                    <!-- Projet 16 – Asteroids -->
                     <li class="projet__carte" data-lang="JavaScript" data-opens-modal="modal-projet-16"
                         data-search="asteroids jeu vaisseau espace astéroïdes score collision html css javascript php"
-                        data-type="jeu front">
+                        data-type="jeu front" data-jouable="true">
                         <div class="projet__thumb">
                             <img alt="Asteroids" src="assets/img/projets/asteroids.png" />
                         </div>
@@ -545,13 +528,14 @@
                                 <span class="projet__tag">PHP</span>
                                 <span class="projet__tag">Jeu</span>
                             </div>
+                            <span class="projet__jouable-badge">🎮 Jouable</span>
                         </div>
                     </li>
 
-                    <!-- Projet 18 – REPARTOUT -->
+                    <!-- Projet 17 – REPARTOUT -->
                     <li class="projet__carte" data-lang="Java" data-opens-modal="modal-projet-17"
                         data-search="repartout pwa application web sav gestion interventions clients machines java jsp rest api telediag jpa sql"
-                        data-type="back">
+                        data-type="app back front">
                         <div class="projet__thumb">
                             <img alt="REPARTOUT" src="assets/img/projets/repartout.png" />
                         </div>
@@ -564,7 +548,7 @@
                         </div>
                     </li>
 
-                    <!-- Projet 19 – Anneau-Étoile -->
+                    <!-- Projet 18 – Anneau-Étoile -->
                     <li class="projet__carte" data-lang="Python" data-opens-modal="modal-projet-18"
                         data-search="anneau étoile optimisation combinatoire heuristique métaheuristique plne python algorithme graphe tsp"
                         data-type="algo data">
@@ -580,10 +564,10 @@
                         </div>
                     </li>
 
-                    <!-- Dictionnaire multilingue -->
+                    <!-- Projet 19 – Dictionnaire multilingue -->
                     <li class="projet__carte" data-lang="Java" data-opens-modal="modal-projet-19"
-                        data-search="dictionnaire multilingue lift javafx xml java éditeur linguistique"
-                        data-type="front back">
+                        data-search="dictionnaire multilingue lift javafx xml java éditeur linguistique application"
+                        data-type="app front">
                         <div class="projet__thumb">
                             <img alt="Dictionnaire multilingue" src="assets/img/projets/dico.png" />
                         </div>
@@ -592,6 +576,23 @@
                             <div class="projet__tags">
                                 <span class="projet__tag">Java</span>
                                 <span class="projet__tag">JavaFX</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Projet 20 – Gestion Poissonnerie -->
+                    <li class="projet__carte" data-lang="TypeScript" data-opens-modal="modal-projet-20"
+                        data-search="poissonnerie commandes plateaux fruits de mer huîtres crevettes crustacés electron react typescript nodejs fêtes noël"
+                        data-type="app back front">
+                        <div class="projet__thumb">
+                            <img alt="Gestion Poissonnerie" src="assets/img/projets/poissonnerie.png" />
+                        </div>
+                        <div class="projet__infos">
+                            <h3 class="projet__titre">Gestion Poissonnerie</h3>
+                            <div class="projet__tags">
+                                <span class="projet__tag">Electron</span>
+                                <span class="projet__tag">React</span>
+                                <span class="projet__tag">TS</span>
                             </div>
                         </div>
                     </li>
@@ -717,7 +718,7 @@
                 </div>
 
                 <!-- OUTILS -->
-                <h3 class="competences__sous-titre">Outils & DevOps</h3>
+                <h3 class="competences__sous-titre">Outils &amp; DevOps</h3>
                 <div class="competences__grille">
                     <div class="comp__item"><img
                             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"
@@ -791,7 +792,7 @@
                 <a class="footer__social-icone" href="https://www.linkedin.com/in/ayman-jari/" target="_blank">
                     <i class="uil uil-linkedin"></i>
                 </a>
-                <a class="footer__social-icone" href="https://github.com/" target="_blank">
+                <a class="footer__social-icone" href="https://github.com/ayman-jari" target="_blank">
                     <i class="uil uil-github"></i>
                 </a>
             </div>
@@ -803,8 +804,8 @@
     <a class="scrollup" href="#" id="scroll-up">
         <i class="uil uil-arrow-up scrollup__icone"></i>
     </a>
-    <!--==================== MAIN JS ====================-->
 
+    <!--==================== MODALS PROJETS ====================-->
     <div class="projet__modal" data-modal-id="modal-projet-0" id="modal-projet-0">
         <div class="projet__modal-contenu">
             <i class="uil uil-times projet__modal-close"></i>
@@ -1064,7 +1065,6 @@
             </div>
         </div>
     </div>
-
     <div class="projet__modal" data-modal-id="modal-projet-17" id="modal-projet-17">
         <div class="projet__modal-contenu">
             <i class="uil uil-times projet__modal-close"></i>
@@ -1083,7 +1083,6 @@
                 (en attente, en cours, réalisée, annulée), interface JSP multi-vues déployée sur serveur Jakarta EE.</p>
         </div>
     </div>
-
     <div class="projet__modal" data-modal-id="modal-projet-18" id="modal-projet-18">
         <div class="projet__modal-contenu">
             <i class="uil uil-times projet__modal-close"></i>
@@ -1103,7 +1102,6 @@
                 selon les paramètres p et alpha.</p>
         </div>
     </div>
-
     <div class="projet__modal" data-modal-id="modal-projet-19" id="modal-projet-19">
         <div class="projet__modal-contenu">
             <i class="uil uil-times projet__modal-close"></i>
@@ -1119,6 +1117,25 @@
                 parsing de fichiers LIFT (SAX), affichage des entrées lexicales sous forme de tableau, filtrage
                 dynamique, formulaire d'édition complet, sauvegarde des modifications. Architecture MVC avec liaisons et
                 observables JavaFX.</p>
+        </div>
+    </div>
+
+    <div class="projet__modal" data-modal-id="modal-projet-20" id="modal-projet-20">
+        <div class="projet__modal-contenu">
+            <i class="uil uil-times projet__modal-close"></i>
+            <div class="projet__modal-header">
+                <img alt="Gestion Poissonnerie" class="projet__modal-img" src="assets/img/projets/poissonnerie.png" />
+                <h4 class="projet__modal-titre">Gestion Poissonnerie</h4>
+            </div>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Objectif :</span> Application desktop de
+                gestion de commandes de plateaux de fruits de mer, développée pour la poissonnerie familiale pendant les
+                fêtes de fin d'année (Noël → Nouvel An).</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Langages :</span> TypeScript, React,
+                Node.js, Electron</p>
+            <p class="projet__modal-txt"><span class="projet__modal-txt-sl">Fonctionnalités :</span> Saisie de commandes
+                avec composition détaillée (huîtres, crevettes, crustacés, poissons — 30+ variétés), deux modes de
+                préparation (plateau à dresser / simple emballage), suivi des statuts en temps réel, inventaire
+                consolidé automatique, export PDF des commandes et génération d'étiquettes (6 par page A4).</p>
         </div>
     </div>
 
