@@ -69,6 +69,12 @@ window.addEventListener('DOMContentLoaded', () => {
     canvas.focus();
     canvas.addEventListener('click', () => canvas.focus());
 
+    canvas.addEventListener('keydown', (e) => {
+    if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key)) {
+        e.preventDefault();
+    }
+});
+
     // Quand on clique n'importe où sauf le chat, on redonne le focus au canvas
     document.addEventListener('click', (e) => {
         if (e.target.id !== 'chat-input') canvas.focus();
@@ -126,6 +132,7 @@ function loadMessages() {
 
 document.addEventListener('keydown', (e) => {
     if (document.activeElement.id === 'chat-input') return;
+canvas.focus();
     touches[e.key] = true;
     if (e.key === 'ArrowUp' && joueur && !joueur.saut) {
         joueur.vy = SAUT_INITIAL;

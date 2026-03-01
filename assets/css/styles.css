@@ -56,12 +56,46 @@
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-    --first-color-second: hsl(var(--hue-color), 30%, 8%);
+    --first-color-second: hsl(var(--hue-color), 40%, 5%);
     --title-color: hsl(var(--hue-color), 8%, 95%);
     --text-color: hsl(var(--hue-color), 8%, 75%);
-    --input-color: hsl(var(--hue-color), 29%, 16%);
-    --body-color: hsl(var(--hue-color), 28%, 12%);
-    --container-color: hsl(var(--hue-color), 29%, 16%);
+    --input-color: hsl(var(--hue-color), 35%, 11%);
+    --body-color: hsl(var(--hue-color), 40%, 4%);
+    --container-color: hsl(var(--hue-color), 35%, 9%);
+    --scroll-bar-color: hsl(var(--hue-color), 20%, 14%);
+    --scroll-thumb-color: hsl(var(--hue-color), 20%, 22%);
+}
+
+body.dark-theme .header {
+    background: rgba(10, 15, 35, 0.65);
+    border-bottom: 1px solid rgba(100, 140, 255, 0.15);
+}
+
+body.dark-theme .scroll-header {
+    background: rgba(10, 15, 35, 0.85);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/*==================== FOND ÉTOILÉ ====================*/
+#stars-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+body.dark-theme #stars-canvas {
+    opacity: 1;
+}
+
+.header, .main, .footer, .scrollup,
+.projet__modal, .mentions__modal {
+    position: relative;
+    z-index: 1;
 }
 
 /* Font size for large devices */
@@ -160,9 +194,13 @@ input, textarea {
     width: 100%;
     position: fixed;
     z-index: var(--z-fixed);
-    background-color: var(--first-color-second);
     top: 0;
     left: 0;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 /*==================== NAV ====================*/
@@ -344,8 +382,10 @@ input, textarea {
 
 /* Change background header */
 .scroll-header {
-    background-color: var(--first-color-second);
-    box-shadow: 0 1px 8px rgba(0, 0, 0, .1);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== RESPONSIVE mobile ===== */
@@ -1124,9 +1164,32 @@ textarea.contact__entree {
 
 /*==================== FOOTER ====================*/
 .footer {
-    background-color: var(--first-color-second);
     padding: 2rem 0 3rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+body.dark-theme .footer {
+    background: rgba(10, 15, 35, 0.65);
+    border-top: 1px solid rgba(100, 140, 255, 0.15);
+}
+
+.footer__social-icone,
+.footer__copy,
+.footer__mentions-btn {
+    color: var(--text-color);
+}
+
+.footer__social-icone:hover {
+    color: var(--first-color);
+}
+
+.footer__mentions-btn:hover {
+    color: var(--first-color);
+}
+
 
 .footer__conteneur {
     display: flex;
@@ -1138,8 +1201,8 @@ textarea.contact__entree {
 
 .footer__titre {
     font-size: var(--h1-font-size);
-    color: #fff;
     font-weight: var(--font-semi-bold);
+    color: var(--title-color);
 }
 
 .footer__liens {
@@ -1150,13 +1213,13 @@ textarea.contact__entree {
 }
 
 .footer__lien {
-    color: #fff;
+    color: var(--text-color);
     font-size: var(--small-font-size);
     transition: .3s;
 }
 
 .footer__lien:hover {
-    color: var(--first-color-lighter);
+    color: var(--first-color);
 }
 
 .footer__socials {
@@ -1166,17 +1229,17 @@ textarea.contact__entree {
 
 .footer__social-icone {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text-color);
     transition: .3s;
 }
 
 .footer__social-icone:hover {
-    color: var(--first-color-lighter);
+    color: var(--first-color);
 }
 
 .footer__copy {
     font-size: var(--smaller-font-size);
-    color: hsla(0, 0%, 100%, .6);
+    color: var(--text-color);
 }
 
 /*========== SCROLL UP ==========*/
@@ -1344,7 +1407,7 @@ textarea.contact__entree {
 .footer__mentions-btn {
     background: none;
     border: none;
-    color: hsla(0, 0%, 100%, .5);
+    color: var(--text-color-light);
     font-size: var(--smaller-font-size);
     cursor: pointer;
     font-family: var(--body-font);
@@ -1353,7 +1416,7 @@ textarea.contact__entree {
 }
 
 .footer__mentions-btn:hover {
-    color: #fff;
+    color: var(--first-color);
 }
 
 .mentions__modal {
