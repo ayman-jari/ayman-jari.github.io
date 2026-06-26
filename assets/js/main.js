@@ -280,3 +280,28 @@ if (mentionsClose) mentionsClose.addEventListener('click', () => mentionsModal.c
 if (mentionsModal) mentionsModal.addEventListener('click', e => {
     if (e.target === mentionsModal) mentionsModal.classList.remove('modal-actif')
 })
+
+/*==================== REVEAL ON SCROLL ====================*/
+; (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const targets = document.querySelectorAll(
+        '.propos__donnees, .parcours__tabs, .timeline__item, .projet__carte, .competences__sous-titre, .competences__grille, .contact__form, .section__titre, .section__soustitre'
+    )
+    targets.forEach(el => el.classList.add('reveal'))
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible')
+                io.unobserve(entry.target)
+            }
+        })
+    }, { threshold: 0.12 })
+    targets.forEach(el => io.observe(el))
+})()
+
+/*==================== FERMER MODALES AVEC ÉCHAP ====================*/
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-actif').forEach(m => m.classList.remove('modal-actif'))
+    }
+})
